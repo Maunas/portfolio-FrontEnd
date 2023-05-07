@@ -1,1 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primario-1: #f4f5fa;
+    --primario-2: #eeeeee;
+    --neutro: #1b1b27;
+    --acento: #139b9b;
+  }
+  body {
+    margin: 0px;
+    background-color: var(--primario-1);
+    color: var(--neutro);
+  }
+  
+  header {
+    background-color: var(--neutro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+    padding: 0 2em;
+  }
+  .logoAP {
+    height: 70%;
+  }
+  .logoAP img {
+    height: 100%;
+  }
+  .contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .redes {
+    display: flex;
+  }
+  .redes img {
+    height: 2em;
+    width: 2em;
+    margin-left: 8px;
+  }
+  .boton {
+    border: 2px solid var(--acento);
+    background-color: transparent;
+    color: var(--acento);
+    font-weight: bold;
+    padding: 5px 1em;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .boton:hover {
+    background-color: var(--acento);
+    color: var(--primario-1);
+  }
+  .boton:active {
+    background-color: transparent;
+    transition: all 0.05s ease-in-out;
+  }
+  .boton.modificar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    font-size: large;
+    padding: 0;
+  }
+  .boton.modificar.agregar {
+    height: 20px;
+    width: 20px;
+    font-size: small;
+  }
+  .boton.modificar.banner {
+    position: absolute;
+  }
+  .portfolio {
+    margin: 3em;
+  }
+  section {
+    margin: 8px;
+    background-color: var(--primario-2);
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px var(--neutro);
+    overflow: hidden;
+  }
+  .banner {
+    height: 500px;
+  }
+  .banner img {
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .personal {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 0;
+  }
+  
+  .perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+  .descripcion {
+    width: 70%;
+  }
+  .perfil img {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+  }
+  
+  .total {
+    width: 250px;
+    background-color: var(--primario-1);
+    height: 1em;
+    border-radius: 10px;
+    box-shadow: var(--neutro) 1px 1px 10px;
+    overflow: hidden;
+  }
+  .progreso {
+    background-color: var(--acento);
+    height: 1em;
+    border-radius: 10px 0px 0px 10px;
+  }
+  
+  .lista,
+  .lista-skills {
+    padding: 1em 2em;
+  }
+  .item-lista img {
+    min-width: 150px;
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+  }
+  .item-lista-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .listaskills {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 200px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin-bottom: 2em;
+  }
+  
+  footer {
+    background-color: var(--neutro);
+    color: var(--primario-1);
+    height: 3em;
+    padding: 0.5em 1em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .botones-grupo {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    width: 68px;
+    gap: 8px;
+  }
+  
+  h4,
+  h5,
+  .skillitem-lista,
+  .nombre,
+  .lista li,
+  .item-lista {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  h4,
+  h5,
+  h2,
+  .lista li {
+    justify-content: space-between;
+  }
+  h4,
+  h5,
+  p {
+    margin: 8px 0 0 0;
+  }
+  

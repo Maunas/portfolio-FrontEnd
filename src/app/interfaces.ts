@@ -20,8 +20,24 @@ export interface Experiencia{
     fechaDesde: Date;
     fechaHasta: Date;
 }
+export interface Formacion{
+    idFormacion: number;
+    institucion: string;
+    carrera: string;
+    urlImagen?: string;
+    fechaFin: Date;
+}
+export interface Proyecto{
+    idProyecto: number;
+    ordenProyecto: number;
+    tituloProyecto: string;
+    urlProyecto?: string;
+    descripcion: string;
+}
 export interface Portfolio{
     persona: Persona;
     experiencia: Experiencia[];
+    formacion: Formacion[];
+    proyecto: Proyecto[];
     contacto: Contacto[];
 }

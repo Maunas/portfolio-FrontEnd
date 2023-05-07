@@ -1,0 +1,18 @@
+<div class="itemlista">
+    <div class="infoitem">
+      <div class="infoitem-detalle">
+        <h5>{{proyecto.tituloProyecto}}</h5>
+        <p class="cursiva">{{proyecto.descripcion}}
+        </p>
+        <a *ngIf="proyecto.urlProyecto" href="{{proyecto.urlProyecto}}">
+            <button class="boton">Ir a Proyecto</button>
+        </a>
+      </div>
+    </div>
+  
+    <div class="botones-grupo">
+      <button class="boton modificar"></button>
+      <button class="boton modificar">x</button>
+    </div>
+  </div>
+  

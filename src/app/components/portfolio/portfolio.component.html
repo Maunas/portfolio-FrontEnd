@@ -1,4 +1,25 @@
 <div class="portfolio">
     <app-personal [persona]="portfolio.persona"></app-personal>
-    <app-experiencia-section [experiencias]="portfolio.experiencia"></app-experiencia-section>
+
+    <section>
+        <h4>Experiencia Laboral
+            <button class="boton modificar agregar">+</button>
+        </h4>
+        <app-experiencia *ngFor="let experiencia of portfolio.experiencia" [experiencia]="experiencia"></app-experiencia>
+    </section>
+
+    <section>
+        <h4>Formación Profesional
+            <button class="boton modificar agregar">+</button>
+        </h4>
+        <app-formacion *ngFor="let formacion of portfolio.formacion" [formacion]="formacion"></app-formacion>
+    </section>
+
+    <section>
+        <h4>Proyectos
+            <button class="boton modificar agregar">+</button>
+        </h4>
+        <app-proyecto *ngFor="let proyecto of portfolio.proyecto" [proyecto]="proyecto"></app-proyecto>
+    </section>
+
 </div>

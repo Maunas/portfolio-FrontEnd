@@ -24,5 +24,18 @@ export class PortfolioComponent {
           'http://www.frm.utn.edu.ar/templates/ja_spica/images/logo-blue.gif',
       },
     ],
+    formacion: [
+      {
+        carrera: 'Ejemplo',
+        institucion: 'Ejemplo insti',
+        urlImagen:
+          'http://www.frm.utn.edu.ar/templates/ja_spica/images/logo-blue.gif'
+      },
+    ],
+    proyecto: [{
+      tituloProyecto: "Ejemplo",
+      descripcion: 'Descripcion',
+      urlProyecto:"https://github.com/Maunas/portfolio-BackEnd/wiki"
+    }]
   } as Portfolio;
 }

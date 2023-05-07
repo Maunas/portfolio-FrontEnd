@@ -10,7 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PersonalComponent } from './components/personal/personal.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { ExperienciaSectionComponent } from './components/experiencia-section/experiencia-section.component';
+import { FormacionComponent } from './components/formacion/formacion.component';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ExperienciaSectionComponent } from './components/experiencia-section/ex
     PortfolioComponent,
     PersonalComponent,
     ExperienciaComponent,
-    ExperienciaSectionComponent
+    FormacionComponent,
+    ProyectoComponent
   ],
   imports: [
     BrowserModule,

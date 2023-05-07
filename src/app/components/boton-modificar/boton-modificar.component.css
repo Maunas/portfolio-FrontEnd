@@ -1,0 +1,7 @@
+.boton.modificar {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: small;
+  }

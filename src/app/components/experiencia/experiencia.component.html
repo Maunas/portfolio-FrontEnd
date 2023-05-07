@@ -1,21 +1,25 @@
 <div class="itemlista">
   <div class="infoitem">
-    <img src="{{experiencia.urlImagen}}"/>
+    <img src="{{ experiencia.urlImagen }}" />
     <div class="infoitem-detalle">
-      <h5>{{experiencia.puesto}}</h5>
-      <p class="cursiva">{{experiencia.fechaDesde}} - 
-        <span *ngIf="experiencia.fechaHasta; then fechaHasta else actualidad"></span>
-        <ng-template #fechaHasta>{{experiencia.fechaHasta}}</ng-template>
+      <h5>
+        {{ experiencia.puesto }}
+        <div class="botones-grupo">
+          <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
+          <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
+        </div>
+      </h5>
+      <p class="cursiva">
+        {{ experiencia.fechaDesde }} -
+        <span
+          *ngIf="experiencia.fechaHasta; then fechahasta; else actualidad"
+        ></span>
+        <ng-template #fechahasta>{{ experiencia.fechaHasta }}</ng-template>
         <ng-template #actualidad>Actualidad</ng-template>
       </p>
       <p>
-        {{experiencia.institucion}}
+        {{ experiencia.institucion }}
       </p>
     </div>
-  </div>
-
-  <div class="botones-grupo">
-    <button class="boton modificar"></button>
-    <button class="boton modificar">x</button>
   </div>
 </div>

@@ -53,21 +53,7 @@
     background-color: transparent;
     transition: all 0.05s ease-in-out;
   }
-  .boton.modificar {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    font-size: large;
-    padding: 0;
-  }
-  .boton.modificar.agregar {
-    height: 20px;
-    width: 20px;
-    font-size: small;
-  }
-  .boton.modificar.banner {
-    position: absolute;
-  }
+
 
   section {
     padding: 1em;
@@ -125,8 +111,7 @@
     gap: 8px;
   }
   h4,
-  h5,
-  h2{
+  h5{
     justify-content: space-between;
   }
   h4,

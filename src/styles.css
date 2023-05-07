@@ -146,12 +146,6 @@
   footer {
     background-color: var(--neutro);
     color: var(--primario-1);
-    height: 3em;
-    padding: 0.5em 1em;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
   }
   .botones-grupo {
     display: flex;

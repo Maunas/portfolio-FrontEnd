@@ -76,26 +76,10 @@
     box-shadow: 2px 2px 10px var(--neutro);
     overflow: hidden;
   }
-  
-  .total {
-    width: 250px;
-    background-color: var(--primario-1);
-    height: 1em;
-    border-radius: 10px;
-    box-shadow: var(--neutro) 1px 1px 10px;
-    overflow: hidden;
-  }
-  .progreso {
-    background-color: var(--acento);
-    height: 1em;
-    border-radius: 10px 0px 0px 10px;
-  }
-  
   .itemlista {
     margin: 1em 2em;
     justify-content: space-between;
   }
-
   .infoitem img {
     min-width: 150px;
     width: 100px;
@@ -107,17 +91,15 @@
     flex-direction: column;
     gap: 8px;
   }
-  .listaskills {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 200px;
-  }
 
-  li {
-    margin-bottom: 2em;
+  .total {
+    background-color: var(--primario-1);
+    box-shadow: var(--neutro) 1px 1px 10px;
   }
-  
+  .progreso {
+    background-color: var(--acento);
+  }
+    
   footer {
     background-color: var(--neutro);
     color: var(--primario-1);

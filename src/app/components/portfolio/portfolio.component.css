@@ -5,3 +5,15 @@
     margin: 3em auto;
     gap:8px;
 }
+.lista{
+    margin: 1em 2em;
+}
+
+.listaskills{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 1em auto;
+}

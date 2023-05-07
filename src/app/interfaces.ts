@@ -34,10 +34,23 @@ export interface Proyecto{
     urlProyecto?: string;
     descripcion: string;
 }
+export interface Habilidad{
+    idHabilidad: number;
+    nombreHabilidad: string;
+    valorMax: number;
+    nivelHabilidad: number;
+    idTipoSkill: number;
+}
+export interface TipoSkill{
+    idTipoSkill: number;
+    nombreTipoSkill: string;
+}
 export interface Portfolio{
     persona: Persona;
     experiencia: Experiencia[];
     formacion: Formacion[];
     proyecto: Proyecto[];
+    habilidad: Habilidad[];
     contacto: Contacto[];
+    tipoSkill: TipoSkill[];
 }

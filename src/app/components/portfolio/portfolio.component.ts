@@ -29,13 +29,42 @@ export class PortfolioComponent {
         carrera: 'Ejemplo',
         institucion: 'Ejemplo insti',
         urlImagen:
-          'http://www.frm.utn.edu.ar/templates/ja_spica/images/logo-blue.gif'
+          'http://www.frm.utn.edu.ar/templates/ja_spica/images/logo-blue.gif',
       },
     ],
-    proyecto: [{
-      tituloProyecto: "Ejemplo",
-      descripcion: 'Descripcion',
-      urlProyecto:"https://github.com/Maunas/portfolio-BackEnd/wiki"
+    proyecto: [
+      {
+        tituloProyecto: 'Ejemplo',
+        descripcion: 'Descripcion',
+        urlProyecto: 'https://github.com/Maunas/portfolio-BackEnd/wiki',
+      },
+    ],
+    habilidad: [
+      {
+        nombreHabilidad: 'A',
+        valorMax: 5,
+        nivelHabilidad: 3,
+        idTipoSkill: 1
+      },
+      {
+        nombreHabilidad: 'C',
+        valorMax: 5,
+        nivelHabilidad: 2,
+        idTipoSkill: 1
+      },
+      {
+        nombreHabilidad: 'Banana',
+        valorMax: 5,
+        nivelHabilidad: 5,
+        idTipoSkill: 1
+      },
+    ],
+    tipoSkill: [{
+      idTipoSkill: 1,
+      nombreTipoSkill: 'Hard Skills'
+    },{
+      idTipoSkill: 2,
+      nombreTipoSkill: 'Soft Skills'
     }]
   } as Portfolio;
 }

@@ -1,0 +1,22 @@
+header {
+    background-color: var(--neutro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+    padding: 0 2em;
+  }
+  .logoAP {
+    height: 70%;
+  }
+  .logoAP img {
+    height: 100%;
+  }
+  .contacto{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .contacto .boton{
+    margin:0 1em;
+  }

@@ -1,4 +1,7 @@
 .portfolio{
+    display: flex;
+    flex-direction: column;
     width:80%;
     margin: 3em auto;
+    gap:8px;
 }

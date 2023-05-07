@@ -16,6 +16,20 @@
     </section>
 
     <section>
+        <h4>Skills
+            <button class="boton modificar agregar">+</button>
+        </h4>
+
+        <div class="lista" *ngFor="let tipoSkill of portfolio.tipoSkill">
+            <h5>{{tipoSkill.nombreTipoSkill}}<button class="boton modificar agregar">+</button></h5>
+            <div class="listaskills">
+                <app-skill *ngFor="let habilidad of portfolio.habilidad" [habilidad]="habilidad" [tiposkill]="tipoSkill"></app-skill>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
         <h4>Proyectos
             <button class="boton modificar agregar">+</button>
         </h4>

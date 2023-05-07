@@ -1,0 +1,13 @@
+    <!--Solo muestra skills de la categoria correspondiente-->
+    <div *ngIf="habilidad.idTipoSkill === tiposkill.idTipoSkill">
+        <p>{{habilidad.nombreHabilidad}}</p>
+        <div class="skillitem-lista">
+          <div class="total">
+            <div class="progreso" [ngStyle]="{'width' : (habilidad.nivelHabilidad / habilidad.valorMax)*100 + '%'}"></div>
+          </div>
+          <div class="botones-grupo">
+            <button class="boton modificar"></button>
+            <button class="boton modificar">x</button>
+          </div>
+        </div>
+    </div>

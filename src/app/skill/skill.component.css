@@ -1,0 +1,10 @@
+.total {
+    width: 250px;
+    height: 1em;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .progreso {
+    height: 1em;
+    border-radius: 10px 0px 0px 10px;
+  }

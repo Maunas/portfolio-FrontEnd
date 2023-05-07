@@ -12,6 +12,16 @@ export interface Persona{
     urlFoto: string;
     urlBanner: string;
 }
+export interface Experiencia{
+    idExperiencia: number;
+    puesto: string;
+    institucion: string;
+    urlImagen?: string;
+    fechaDesde: Date;
+    fechaHasta: Date;
+}
 export interface Portfolio{
     persona: Persona;
+    experiencia: Experiencia[];
+    contacto: Contacto[];
 }

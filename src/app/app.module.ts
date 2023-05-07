@@ -9,6 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { PersonalComponent } from './components/personal/personal.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { ExperienciaSectionComponent } from './components/experiencia-section/experiencia-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PersonalComponent } from './components/personal/personal.component';
     ContactoComponent,
     FooterComponent,
     PortfolioComponent,
-    PersonalComponent
+    PersonalComponent,
+    ExperienciaComponent,
+    ExperienciaSectionComponent
   ],
   imports: [
     BrowserModule,

@@ -7,13 +7,17 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './components/footer/footer.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PersonalComponent } from './components/personal/personal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ContactoComponent,
-    FooterComponent
+    FooterComponent,
+    PortfolioComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,

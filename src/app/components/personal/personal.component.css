@@ -1,0 +1,27 @@
+.banner {
+    height: 400px;
+  }
+  .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .personal {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 0;
+  }
+  .perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+  }
+  .perfil img {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+  }
+  .descripcion {
+    width: 70%;
+  }

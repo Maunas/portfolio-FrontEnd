@@ -1,22 +1,22 @@
 <div class="itemlista">
-    <div class="infoitem">
-      <img src="{{formacion.urlImagen}}"/>
-      <div class="infoitem-detalle">
-        <h5>{{formacion.carrera}}</h5>
-        <p class="cursiva">
-            <span *ngIf="formacion.fechaFin; then fechaFin else enCurso"></span>
-            <ng-template #fechaFin>{{formacion.fechaFin}}</ng-template>
-            <ng-template #enCurso>En curso</ng-template>
-        </p>
-        <p>
-          {{formacion.institucion}}
-        </p>
-      </div>
-    </div>
-  
-    <div class="botones-grupo">
-      <button class="boton modificar"></button>
-      <button class="boton modificar">x</button>
+  <div class="infoitem">
+    <img src="{{ formacion.urlImagen }}" />
+    <div class="infoitem-detalle">
+      <h5>
+        {{ formacion.carrera }}
+        <div class="botones-grupo">
+          <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
+          <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
+        </div>
+      </h5>
+      <p class="cursiva">
+        <span *ngIf="formacion.fechaFin; then fechaFin; else enCurso"></span>
+        <ng-template #fechaFin>{{ formacion.fechaFin }}</ng-template>
+        <ng-template #enCurso>En curso</ng-template>
+      </p>
+      <p>
+        {{ formacion.institucion }}
+      </p>
     </div>
   </div>
-  
+</div>

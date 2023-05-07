@@ -3,6 +3,7 @@
     <img src="..\..\..\assets\APLogo-20-20.png" alt="Argentina Programa 4.0"/>
   </div>
   <div class="contacto">
+      <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
     <app-contacto *ngFor="let contacto of contactos" [contacto]="contacto">
     </app-contacto>
     <button class="boton">Iniciar Sesión</button>

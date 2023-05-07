@@ -3,25 +3,35 @@
 
     <section>
         <h4>Experiencia Laboral
-            <button class="boton modificar agregar">+</button>
+            <div class="botones-grupo">
+                <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+              </div>
         </h4>
         <app-experiencia *ngFor="let experiencia of portfolio.experiencia" [experiencia]="experiencia"></app-experiencia>
     </section>
 
     <section>
         <h4>Formación Profesional
-            <button class="boton modificar agregar">+</button>
+            <div class="botones-grupo">
+                <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+              </div>
         </h4>
         <app-formacion *ngFor="let formacion of portfolio.formacion" [formacion]="formacion"></app-formacion>
     </section>
 
     <section>
         <h4>Skills
-            <button class="boton modificar agregar">+</button>
+            <div class="botones-grupo">
+                <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+              </div>
         </h4>
 
         <div class="lista" *ngFor="let tipoSkill of portfolio.tipoSkill">
-            <h5>{{tipoSkill.nombreTipoSkill}}<button class="boton modificar agregar">+</button></h5>
+            <h5>{{tipoSkill.nombreTipoSkill}}
+            <div class="botones-grupo">
+                <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+              </div>
+            </h5>
             <div class="listaskills">
                 <app-skill *ngFor="let habilidad of portfolio.habilidad" [habilidad]="habilidad" [tiposkill]="tipoSkill"></app-skill>
             </div>
@@ -31,9 +41,12 @@
 
     <section>
         <h4>Proyectos
-            <button class="boton modificar agregar">+</button>
+            <div class="botones-grupo">
+                <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+              </div>
         </h4>
         <app-proyecto *ngFor="let proyecto of portfolio.proyecto" [proyecto]="proyecto"></app-proyecto>
     </section>
 
 </div>
+

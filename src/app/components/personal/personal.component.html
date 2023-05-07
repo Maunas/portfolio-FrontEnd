@@ -1,0 +1,26 @@
+<section>
+    <div class="banner">
+      <!--https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/sliderimage1/1676134779/banner-ok-argentina-programa.jpg-->
+        <img
+        alt=""
+        src={{persona.urlBanner}}
+      />
+    </div>
+    <div class="personal">
+      <div class="perfil">
+        <img src="{{persona.urlFoto}}" alt="Foto de Perfil"/>
+        <p>{{edad}} años</p>
+        <p>{{persona.profesion}}</p>
+      </div>
+
+      <div class="descripcion">
+        <h2>
+          {{persona.nombreCompleto}} 
+          <button class="boton modificar"></button>
+        </h2>
+        <p>
+          {{persona.descripcion}}
+        </p>
+      </div>
+    </div>
+  </section>

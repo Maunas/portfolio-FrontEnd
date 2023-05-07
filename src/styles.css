@@ -10,7 +10,6 @@
     color: var(--neutro);
   }
   
-
   .contacto {
     display: flex;
     flex-direction: row;
@@ -61,43 +60,13 @@
   .boton.modificar.banner {
     position: absolute;
   }
-  .portfolio {
-    margin: 3em;
-  }
+
   section {
     margin: 8px;
     background-color: var(--primario-2);
     border-radius: 10px;
     box-shadow: 2px 2px 10px var(--neutro);
     overflow: hidden;
-  }
-  .banner {
-    height: 500px;
-  }
-  .banner img {
-    width: 110%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .personal {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 1em 0;
-  }
-  
-  .perfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-  }
-  .descripcion {
-    width: 70%;
-  }
-  .perfil img {
-    height: 10em;
-    width: 10em;
-    border-radius: 50%;
   }
   
   .total {
@@ -147,6 +116,7 @@
     background-color: var(--neutro);
     color: var(--primario-1);
   }
+  
   .botones-grupo {
     display: flex;
     flex-direction: row;
@@ -155,10 +125,10 @@
     gap: 8px;
   }
   
+  h2,
   h4,
   h5,
   .skillitem-lista,
-  .nombre,
   .lista li,
   .item-lista {
     display: flex;

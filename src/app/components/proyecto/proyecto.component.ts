@@ -10,4 +10,6 @@ export class ProyectoComponent {
 
   @Input() 
   proyecto: Proyecto = {} as Proyecto;
+
+  
 }

@@ -8,5 +8,5 @@ import { Contacto } from '../../interfaces';
 })
 export class HeaderComponent {
 
-  contactos: Contacto[] = [{id: 1, nombreContacto: "github", enlaceContacto: "https://github.com/Maunas"}, {id: 2, nombreContacto: "LiNkEdIn", enlaceContacto: "https://github.com/Maunas"}];
+  contactos: Contacto[] = [];
 }

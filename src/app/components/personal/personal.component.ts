@@ -11,5 +11,5 @@ export class PersonalComponent {
   @Input()
   persona: Persona = {} as Persona;
   edad: number = 23;
-
+  
 }

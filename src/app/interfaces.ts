@@ -1,7 +1,7 @@
 export interface Contacto{
     id: number;
     nombreContacto: string;
-    enlaceContacto: string;
+    urlContacto: string;
 }
 export interface Persona{
     idPersona: number;
@@ -39,7 +39,7 @@ export interface Habilidad{
     nombreHabilidad: string;
     valorMax: number;
     nivelHabilidad: number;
-    idTipoSkill: number;
+    tipoSkill: string;
 }
 export interface TipoSkill{
     idTipoSkill: number;

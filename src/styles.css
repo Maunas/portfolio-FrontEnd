@@ -66,11 +66,15 @@
     margin: 1em 2em;
     justify-content: space-between;
   }
-  .infoitem img {
-    min-width: 150px;
-    width: 100px;
+  .infoitem .imagen {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
     height: 100px;
     object-fit: scale-down;
+    font-size: 40px;
+    border-radius: 10px;
   }
   .infoitem-detalle {
     display: flex;

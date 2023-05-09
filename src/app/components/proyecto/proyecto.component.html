@@ -1,19 +1,26 @@
-<div class="itemlista">
+<section>
+  <h4>Proyectos Realizados
+      <div class="botones-grupo">
+          <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+        </div>
+  </h4>
+
+<div class="itemlista" *ngFor="let proy of proyecto">
     <div class="infoitem">
       <div class="infoitem-detalle">
-        <h5>{{proyecto.tituloProyecto}}
+        <h5>{{proy.tituloProyecto}}
           <div class="botones-grupo">
             <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
             <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
           </div>
         </h5>
         <p class="cursiva descripcion">
-          {{proyecto.descripcion}}
+          {{proy.descripcion}}
         </p>
-        <a *ngIf="proyecto.urlProyecto" href="{{proyecto.urlProyecto}}">
+        <a *ngIf="proy.urlProyecto" href="{{proy.urlProyecto}}">
             <button class="boton">Ir a Proyecto</button>
         </a>
       </div>
     </div>
   </div>
-  
+</section>

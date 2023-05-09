@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Contacto } from '../../interfaces';
 
 @Component({
@@ -8,5 +8,6 @@ import { Contacto } from '../../interfaces';
 })
 export class HeaderComponent {
 
-  contactos: Contacto[] = [];
+  @Input()
+  contacto: Contacto[] = [];
 }

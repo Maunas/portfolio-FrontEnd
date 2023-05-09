@@ -1,11 +1,11 @@
-<header>
+<header class="sticky-top">
   <div class="logoAP">
     <img src="..\..\..\assets\APLogo-20-20.png" alt="Argentina Programa 4.0"/>
   </div>
   <div class="contacto">
-      <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-    <app-contacto *ngFor="let contacto of contactos" [contacto]="contacto">
-    </app-contacto>
+
+    <app-contacto *ngFor="let cont of contacto" [contacto]="cont"></app-contacto>
+    <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
     <button class="boton">Iniciar Sesión</button>
   </div>
 </header>

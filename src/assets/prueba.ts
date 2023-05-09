@@ -11,12 +11,32 @@ export const portfolioPrueba = {
     "contacto": [
         {
             "id": 1,
-            "nombreContacto": "Linkedin",
+            "nombreContacto": "Facebook",
             "urlContacto": "linkedin.com"
         },
         {
             "id": 3,
+            "nombreContacto": "Instagram",
+            "urlContacto": "github.com"
+        },
+        {
+            "id": 1,
             "nombreContacto": "Github",
+            "urlContacto": "linkedin.com"
+        },
+        {
+            "id": 3,
+            "nombreContacto": "Linkedin",
+            "urlContacto": "github.com"
+        },
+        {
+            "id": 1,
+            "nombreContacto": "Facebook",
+            "urlContacto": "linkedin.com"
+        },
+        {
+            "id": 3,
+            "nombreContacto": "Twitter",
             "urlContacto": "github.com"
         }
     ],

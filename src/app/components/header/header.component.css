@@ -3,7 +3,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 4em;
+    height: 70px;
     padding: 0 2em;
   }
   .logoAP {
@@ -13,10 +13,12 @@ header {
     height: 100%;
   }
   .contacto{
+    height:100%;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0;
   }
   .contacto .boton{
     margin:0 1em;
   }
+

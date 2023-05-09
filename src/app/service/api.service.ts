@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioService {
+export class ApiService {
 
   apiUrl: string = 'http://localhost:8080/portfolio';
   constructor(private http: HttpClient) {}

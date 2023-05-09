@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Portfolio } from 'src/app/interfaces';
-import { PortfolioService } from 'src/app/service/portfolio.service';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,10 +10,10 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
 export class PortfolioComponent {
   portfolio: Portfolio = {} as Portfolio;
 
-  constructor(private portfolioServ: PortfolioService){}
+  constructor(private apiServ: ApiService){}
 
   ngOnInit() {
-    this.portfolioServ.getPortfolio().subscribe(
+    this.apiServ.getPortfolio().subscribe(
       (portfolio) => (this.portfolio = portfolio)
     );
   }

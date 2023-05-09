@@ -1,5 +1,5 @@
 import { Component , Input } from '@angular/core';
-import { Habilidad, TipoSkill } from '../interfaces';
+import { Habilidad } from '../interfaces';
 
 @Component({
   selector: 'app-skill',
@@ -10,7 +10,5 @@ export class SkillComponent {
 
   @Input()
   habilidad: Habilidad = {} as Habilidad;
-  @Input()
-  tiposkill: TipoSkill = {} as TipoSkill;
 
 }

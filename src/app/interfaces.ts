@@ -18,18 +18,17 @@ export interface Experiencia{
     institucion: string;
     urlImagen?: string;
     fechaDesde: Date;
-    fechaHasta: Date;
+    fechaHasta?: Date;
 }
 export interface Formacion{
     idFormacion: number;
     institucion: string;
     carrera: string;
     urlImagen?: string;
-    fechaFin: Date;
+    fechaFin?: Date;
 }
 export interface Proyecto{
     idProyecto: number;
-    ordenProyecto: number;
     tituloProyecto: string;
     urlProyecto?: string;
     descripcion: string;
@@ -41,10 +40,6 @@ export interface Habilidad{
     nivelHabilidad: number;
     tipoSkill: string;
 }
-export interface TipoSkill{
-    idTipoSkill: number;
-    nombreTipoSkill: string;
-}
 export interface Portfolio{
     persona: Persona;
     experiencia: Experiencia[];
@@ -52,5 +47,4 @@ export interface Portfolio{
     proyecto: Proyecto[];
     habilidad: Habilidad[];
     contacto: Contacto[];
-    tipoSkill: TipoSkill[];
 }

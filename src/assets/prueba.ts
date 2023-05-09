@@ -27,7 +27,7 @@ export const portfolioPrueba = {
             "fechaDesde": new Date(),
             "fechaHasta": undefined,
             "institucion": "Institucion 2",
-            "urlImagen": " "
+            "urlImagen": ""
         },
         {
             "idExperiencia": 6,
@@ -35,7 +35,7 @@ export const portfolioPrueba = {
             "fechaDesde": new Date(),
             "fechaHasta": undefined,
             "institucion": "Ut n",
-            "urlImagen": " "
+            "urlImagen": ""
         }
     ],
     "formacion": [
@@ -43,7 +43,7 @@ export const portfolioPrueba = {
             "idFormacion": 7,
             "institucion": "Institucion 1",
             "carrera": "Ejemplo",
-            "urlImagen": " ",
+            "urlImagen": "",
             "fechaFin": undefined
         }
     ],
@@ -67,7 +67,7 @@ export const portfolioPrueba = {
         {
             "idProyecto": 8,
             "tituloProyecto": "Ejemplo",
-            "urlProyecto": " ",
+            "urlProyecto": "",
             "descripcion": "Proyecto Ejemplo"
         }
     ]

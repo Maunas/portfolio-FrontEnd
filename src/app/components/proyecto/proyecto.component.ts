@@ -9,7 +9,7 @@ import { Proyecto } from 'src/app/interfaces';
 export class ProyectoComponent {
 
   @Input() 
-  proyecto: Proyecto = {} as Proyecto;
+  proyecto: Proyecto[] = [];
 
   
 }

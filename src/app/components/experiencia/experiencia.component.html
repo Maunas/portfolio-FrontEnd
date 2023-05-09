@@ -1,25 +1,38 @@
-<div class="itemlista">
-  <div class="infoitem">
-    <img src="{{ experiencia.urlImagen }}" />
-    <div class="infoitem-detalle">
-      <h5>
-        {{ experiencia.puesto }}
-        <div class="botones-grupo">
-          <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
-          <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
-        </div>
-      </h5>
-      <p class="cursiva">
-        {{ experiencia.fechaDesde }} -
-        <span
-          *ngIf="experiencia.fechaHasta; then fechahasta; else actualidad"
-        ></span>
-        <ng-template #fechahasta>{{ experiencia.fechaHasta }}</ng-template>
-        <ng-template #actualidad>Actualidad</ng-template>
-      </p>
-      <p>
-        {{ experiencia.institucion }}
-      </p>
+<section>
+  <h4>
+    Experiencia Laboral
+    <div class="botones-grupo">
+      <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
+    </div>
+  </h4>
+
+  <div class="itemlista" *ngFor="let exp of experiencia">
+    <div class="infoitem">
+      <div class="imagen">
+        <div *ngIf="exp.urlImagen != ''; else placeholder"><img src="{{ exp.urlImagen }}"/></div>
+        <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+      </div>
+      
+      <div class="infoitem-detalle">
+        <h5>
+          {{ exp.puesto }}
+          <div class="botones-grupo">
+            <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
+            <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
+          </div>
+        </h5>
+        <p class="cursiva">
+          {{ exp.fechaDesde }} -
+          <span
+            *ngIf="exp.fechaHasta; then fechahasta; else actualidad"
+          ></span>
+          <ng-template #fechahasta>{{ exp.fechaHasta }}</ng-template>
+          <ng-template #actualidad>Actualidad</ng-template>
+        </p>
+        <p>
+          {{ exp.institucion }}
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>

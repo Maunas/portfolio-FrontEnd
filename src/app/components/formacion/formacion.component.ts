@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Formacion } from 'src/app/interfaces';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-formacion',
@@ -9,6 +10,6 @@ import { Formacion } from 'src/app/interfaces';
 export class FormacionComponent {
 
   @Input()
-  formacion: Formacion = {} as Formacion;
-
+  formacion: Formacion[] = [];
+  icono = faGraduationCap;
 }

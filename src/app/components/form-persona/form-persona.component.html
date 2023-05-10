@@ -1,1 +1,104 @@
-<p>form-persona works!</p>
+<section>
+  <div class="banner">
+    <!--https://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/sliderimage1/1676134779/banner-ok-argentina-programa.jpg-->
+    <img alt="" src="{{ persona.urlBanner }}" />
+  </div>
+
+  <form>
+    <fieldset [disabled]="!selected">
+      <div class="personal">
+        <div class="perfil">
+          <img src="{{ persona.urlFoto }}" alt="Foto de Perfil" class="mb-3"/>
+
+          <div class="row mb-3 align-items-center">
+              <label for="nacimiento" class="form-label"
+              >Fecha de Nacimiento</label
+            >
+              <input
+              type="date"
+              id="nacimiento"
+              class="form-control"
+              name="nacimiento"
+              [(ngModel)]="persona.nacimiento"
+            />
+          </div>
+
+          <div class="row mb-3 align-items-center">
+              <label for="profesion" class="form-label">Ocupacion</label>
+              <input
+              type="text"
+              id="profesion"
+              class="form-control"
+              name="profesion"
+              [(ngModel)]="persona.profesion"
+            />
+          </div>
+        </div>
+
+        <div class="descripcion">
+          <div class="d-flex flex-row justify-content-between">
+            <div class="row mb-3 align-items-center">
+              <div class="col-auto">
+                <label for="nombreCompleto" class="col-form-label"
+                  >Nombre</label
+                >
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="nombreCompleto"
+                  class="form-control"
+                  name="nombreCompleto"
+                  [(ngModel)]="persona.nombreCompleto"
+                />
+              </div>
+            </div>
+            <div class="botones-grupo">
+              <app-boton-modificar
+                [accion]="'editar'"
+                (click)="onEditPersona(persona)"
+              ></app-boton-modificar>
+            </div>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <label for="descripcion" class="col-form-label">Descripción</label>
+            <textarea
+              id="descripcion"
+              class="form-control"
+              rows="2"
+              name="descripcion"
+              [(ngModel)]="persona.descripcion"
+            ></textarea>
+          </div>
+
+          <div class="row mb-3 align-items-center">
+            <label for="urlFoto" class="form-label">Url Foto</label>
+            <input
+              type="text"
+              id="urlFoto"
+              class="form-control"
+              name="urlFoto"
+              [(ngModel)]="persona.urlFoto"
+            />
+          </div>
+          <div class="row mb-3 align-items-center">
+            <label for="urlBanner" class="form-label">Url Banner</label>
+            <input
+              type="text"
+              id="urlBanner"
+              class="form-control"
+              name="urlBanner"
+              [(ngModel)]="persona.urlBanner"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+      <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !selected }">
+        Guardar Cambios
+      </button>
+    </div>
+    </fieldset>
+  </form>
+</section>

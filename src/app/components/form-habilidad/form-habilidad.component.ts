@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Habilidad } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-form-habilidad',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-habilidad.component.css']
 })
 export class FormHabilidadComponent {
-
+  @Input()
+  habilidad: Habilidad[] = [];
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Contacto } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-form-contacto',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-contacto.component.css']
 })
 export class FormContactoComponent {
-
+  @Input()
+  contacto: Contacto[] = [];
 }

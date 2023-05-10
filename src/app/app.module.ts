@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,6 +25,7 @@ import { FormFormacionComponent } from './components/form-formacion/form-formaci
 import { FormHabilidadComponent } from './components/form-habilidad/form-habilidad.component';
 import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.component';
 import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
+import { ModificarPortfolioComponent } from './components/modificar-portfolio/modificar-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { FormContactoComponent } from './components/form-contacto/form-contacto.
     FormFormacionComponent,
     FormHabilidadComponent,
     FormProyectoComponent,
-    FormContactoComponent
+    FormContactoComponent,
+    ModificarPortfolioComponent
   ],
   imports: [
     BrowserModule,

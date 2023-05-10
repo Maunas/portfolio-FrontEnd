@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Experiencia } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-form-experiencia',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-experiencia.component.css']
 })
 export class FormExperienciaComponent {
-
+  @Input()
+  experiencia: Experiencia[] = [];
 }

@@ -1,7 +1,16 @@
 .boton.modificar {
     height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    padding: 0;
+    border-radius: 20px;
+    padding: 1em;
     font-size: small;
   }
+  .boton.modificar div{
+    width:0;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+  .boton.modificar:hover div{
+    width:50px;
+    margin: 0 auto;
+    transition: width 0.3s ease-in-out;}
+    

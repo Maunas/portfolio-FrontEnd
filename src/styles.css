@@ -98,8 +98,6 @@
   .botones-grupo {
     display: flex;
     flex-direction: row;
-    height: 30px;
-    width: 68px;
     gap: 8px;
   }
   

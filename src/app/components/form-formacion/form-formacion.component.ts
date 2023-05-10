@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Formacion } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-form-formacion',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-formacion.component.css']
 })
 export class FormFormacionComponent {
-
+  @Input()
+  formacion: Formacion[] = [];
 }

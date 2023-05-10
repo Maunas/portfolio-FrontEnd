@@ -1,0 +1,12 @@
+<app-form-contacto [contacto]="portfolio.contacto"></app-form-contacto>
+<div class="portfolio">
+  <app-form-persona [persona]="portfolio.persona" [selected]="selectedItem === portfolio.persona" (onSelectObjeto)="modificarPersona(portfolio.persona)"></app-form-persona>
+
+  <app-form-experiencia [experiencia]="portfolio.experiencia"></app-form-experiencia>
+
+  <app-form-formacion [formacion]="portfolio.formacion"></app-form-formacion>
+
+  <app-form-habilidad [habilidad]="portfolio.habilidad"></app-form-habilidad>
+
+  <app-form-proyecto [proyecto]="portfolio.proyecto"></app-form-proyecto>
+</div>

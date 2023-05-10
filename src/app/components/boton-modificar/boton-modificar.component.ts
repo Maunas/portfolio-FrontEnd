@@ -13,7 +13,7 @@ export class BotonModificarComponent {
   faIcon = faPen;
 
   ngOnInit(){
-    switch (this.accion){
+    switch (this.accion.toLowerCase()){
       case "eliminar": this.faIcon = faMinus; break;
       case "agregar": this.faIcon = faPlus; break;
       case "editar": this.faIcon = faPen; break;

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Proyecto } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-form-proyecto',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-proyecto.component.css']
 })
 export class FormProyectoComponent {
-
+  @Input()
+  proyecto: Proyecto[] = [];
 }

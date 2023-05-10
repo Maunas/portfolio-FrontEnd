@@ -17,6 +17,13 @@ import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { SkillComponent } from './components/skill/skill.component';
 import { BotonModificarComponent } from './components/boton-modificar/boton-modificar.component';
 import { ItemSkillComponent } from './components/item-skill/item-skill.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormPersonaComponent } from './components/form-persona/form-persona.component';
+import { FormExperienciaComponent } from './components/form-experiencia/form-experiencia.component';
+import { FormFormacionComponent } from './components/form-formacion/form-formacion.component';
+import { FormHabilidadComponent } from './components/form-habilidad/form-habilidad.component';
+import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.component';
+import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +38,14 @@ import { ItemSkillComponent } from './components/item-skill/item-skill.component
     ProyectoComponent,
     SkillComponent,
     BotonModificarComponent,
-    ItemSkillComponent
+    ItemSkillComponent,
+    LoginComponent,
+    FormPersonaComponent,
+    FormExperienciaComponent,
+    FormFormacionComponent,
+    FormHabilidadComponent,
+    FormProyectoComponent,
+    FormContactoComponent
   ],
   imports: [
     BrowserModule,

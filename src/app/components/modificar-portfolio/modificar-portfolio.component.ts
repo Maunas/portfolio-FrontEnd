@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Persona, Portfolio } from 'src/app/interfaces';
+import { Experiencia, Persona, Portfolio } from 'src/app/interfaces';
 import { ApiService } from 'src/app/service/api.service';
 import { portfolioPrueba } from 'src/assets/prueba';
 
@@ -12,6 +12,7 @@ export class ModificarPortfolioComponent {
 
   portfolio: Portfolio = portfolioPrueba;
   selectedItem = {};
+  exp: Experiencia = {} as Experiencia;
 
   constructor(private apiServ: ApiService){}
 
@@ -21,7 +22,8 @@ export class ModificarPortfolioComponent {
     );
   } 
 
-  modificarPersona(persona: Persona){
-    this.selectedItem = persona;
+  modificarObjeto(objeto: any){
+    this.selectedItem = objeto;
   }
+
 }

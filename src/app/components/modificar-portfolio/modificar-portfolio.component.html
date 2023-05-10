@@ -1,8 +1,8 @@
 <app-form-contacto [contacto]="portfolio.contacto"></app-form-contacto>
 <div class="portfolio">
-  <app-form-persona [persona]="portfolio.persona" [selected]="selectedItem === portfolio.persona" (onSelectObjeto)="modificarPersona(portfolio.persona)"></app-form-persona>
+  <app-form-persona [persona]="portfolio.persona" [selected]="selectedItem === portfolio.persona" (onSelectObjeto)="modificarObjeto(portfolio.persona)"></app-form-persona>
 
-  <app-form-experiencia [experiencia]="portfolio.experiencia"></app-form-experiencia>
+  <app-form-experiencia [experiencia]="portfolio.experiencia" (onSelectObjeto)="modificarObjeto($event)" [selectedItem]='selectedItem'></app-form-experiencia>
 
   <app-form-formacion [formacion]="portfolio.formacion"></app-form-formacion>
 

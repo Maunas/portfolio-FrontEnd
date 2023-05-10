@@ -15,7 +15,6 @@ export class FormPersonaComponent {
   onSelectObjeto: EventEmitter<Persona> = new EventEmitter<Persona>();
   edad: number = 23;
 
-
   modificarPersona: boolean = false;
 
   onEditPersona(persona: Persona){

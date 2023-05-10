@@ -17,7 +17,7 @@ export class PortfolioComponent {
     this.apiServ.getPortfolio().subscribe(
       (portfolio) => (this.portfolio = portfolio)
     );
-  }
+  } 
 
 }
 

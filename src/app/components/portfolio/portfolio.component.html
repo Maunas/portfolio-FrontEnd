@@ -6,29 +6,7 @@
 
   <app-formacion [formacion]="portfolio.formacion"></app-formacion>
 
-  <section>
-    <h4>
-      Skills
-      <div class="botones-grupo">
-        <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-      </div>
-    </h4>
-
-    <div class="lista">
-      <h5>
-        Hard
-        <div class="botones-grupo">
-          <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-        </div>
-      </h5>
-      <div class="listaskills">
-        <app-skill
-          *ngFor="let habilidad of portfolio.habilidad"
-          [habilidad]="habilidad"
-        ></app-skill>
-      </div>
-    </div>
-  </section>
+  <app-skill [habilidad]="portfolio.habilidad"></app-skill>
 
   <app-proyecto [proyecto]="portfolio.proyecto"></app-proyecto>
 </div>

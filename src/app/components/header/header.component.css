@@ -21,4 +21,6 @@ header {
   .contacto .boton{
     margin:0 1em;
   }
-
+app-boton-modificar{
+  margin: 10px;
+}

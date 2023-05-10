@@ -14,8 +14,9 @@ import { PersonalComponent } from './components/personal/personal.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { FormacionComponent } from './components/formacion/formacion.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
-import { SkillComponent } from './skill/skill.component';
+import { SkillComponent } from './components/skill/skill.component';
 import { BotonModificarComponent } from './components/boton-modificar/boton-modificar.component';
+import { ItemSkillComponent } from './components/item-skill/item-skill.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BotonModificarComponent } from './components/boton-modificar/boton-modi
     FormacionComponent,
     ProyectoComponent,
     SkillComponent,
-    BotonModificarComponent
+    BotonModificarComponent,
+    ItemSkillComponent
   ],
   imports: [
     BrowserModule,

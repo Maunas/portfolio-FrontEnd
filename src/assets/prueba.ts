@@ -74,7 +74,46 @@ export const portfolioPrueba = {
             "valorMax": 10,
             "nivelHabilidad": 5,
             "tipoSkill": "Hard"
-        },
+        },        {
+            "idHabilidad": 9,
+            "nombreHabilidad": "Skill H3",
+            "valorMax": 10,
+            "nivelHabilidad": 5,
+            "tipoSkill": "Hard"
+        },        {
+            "idHabilidad": 9,
+            "nombreHabilidad": "Skill H2",
+            "valorMax": 10,
+            "nivelHabilidad": 5,
+            "tipoSkill": "Hard"
+        },        {
+            "idHabilidad": 9,
+            "nombreHabilidad": "Skill S",
+            "valorMax": 10,
+            "nivelHabilidad": 5,
+            "tipoSkill": "Soft"
+        },{
+
+                    "idHabilidad": 9,
+        "nombreHabilidad": "Skill S",
+        "valorMax": 10,
+        "nivelHabilidad": 5,
+        "tipoSkill": "Soft"
+    },{
+
+        "idHabilidad": 9,
+"nombreHabilidad": "Skill S",
+"valorMax": 10,
+"nivelHabilidad": 5,
+"tipoSkill": "Soft"
+},{
+
+    "idHabilidad": 9,
+"nombreHabilidad": "Skill S",
+"valorMax": 10,
+"nivelHabilidad": 5,
+"tipoSkill": "Soft"
+},
         {
             "idHabilidad": 10,
             "nombreHabilidad": "Skill 2",

@@ -1,0 +1,17 @@
+<div class="skill-item">
+  <p>{{ skill.nombreHabilidad }}</p>
+  <div class="flexbox-row">
+    <div class="total">
+      <div
+        class="progreso"
+        [ngStyle]="{
+          width: (skill.nivelHabilidad / skill.valorMax) * 100 + '%'
+        }"
+      ></div>
+    </div>
+    <div class="botones-grupo">
+      <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
+      <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
+    </div>
+  </div>
+</div>

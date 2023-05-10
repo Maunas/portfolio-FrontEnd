@@ -106,9 +106,9 @@
   h2,
   h4,
   h5,
-  .skillitem-lista,
   .itemlista,
-  .infoitem {
+  .infoitem,
+  .flexbox-row {
     display: flex;
     flex-direction: row;
     align-items: center;

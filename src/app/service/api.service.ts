@@ -21,71 +21,71 @@ export class ApiService {
     return this.http.get<Portfolio>(this.apiUrl);
   }
 
-  modifyPersona(persona: Persona): Observable<Persona>{
+  putPersona(persona: Persona): Observable<Persona>{
     const url: string = this.apiUrl + "/edit/persona/modificar";
     return this.http.put<Persona>(url, persona, httpOptions);
   }
 
-  modifyContacto(contacto: Contacto): Observable<Contacto>{
+  putContacto(contacto: Contacto): Observable<Contacto>{
     const url: string = this.apiUrl + "/edit/contacto/modificar";
     return this.http.put<Contacto>(url, contacto, httpOptions);
   }
-  modifyHabilidad(habilidad: Habilidad): Observable<Habilidad>{
+  putHabilidad(habilidad: Habilidad): Observable<Habilidad>{
     const url: string = this.apiUrl + "/edit/habilidad/modificar";
     return this.http.put<Habilidad>(url, habilidad, httpOptions);
   }
-    modifyProyecto(proyecto: Proyecto): Observable<Proyecto>{
+  putProyecto(proyecto: Proyecto): Observable<Proyecto>{
     const url: string = this.apiUrl + "/edit/proyecto/modificar";
     return this.http.put<Proyecto>(url, proyecto, httpOptions);
   }
-  modifyExperiencia(experiencia: Experiencia): Observable<Experiencia>{
+  putExperiencia(experiencia: Experiencia): Observable<Experiencia>{
     const url: string = this.apiUrl + "/edit/experiencia/modificar";
     return this.http.put<Experiencia>(url, experiencia, httpOptions);
   }
-  modifyFormacion(formacion: Formacion): Observable<Formacion>{
+  putFormacion(formacion: Formacion): Observable<Formacion>{
     const url: string = this.apiUrl + "/edit/formacion/modificar";
     return this.http.put<Formacion>(url, formacion, httpOptions);
   }
 
-  createContacto(contacto: Contacto): Observable<Contacto>{
+  postContacto(contacto: Contacto): Observable<Contacto>{
     const url: string = this.apiUrl + "/edit/contacto/crear";
     return this.http.post<Contacto>(url, contacto, httpOptions);
   }
-  createHabilidad(habilidad: Habilidad): Observable<Habilidad>{
+  postHabilidad(habilidad: Habilidad): Observable<Habilidad>{
     const url: string = this.apiUrl + "/edit/habilidad/crear";
     return this.http.post<Habilidad>(url, habilidad, httpOptions);
   }
-  createProyecto(proyecto: Proyecto): Observable<Proyecto>{
+  postProyecto(proyecto: Proyecto): Observable<Proyecto>{
     const url: string = this.apiUrl + "/edit/proyecto/crear";
     return this.http.post<Proyecto>(url, proyecto, httpOptions);
   }
-  createExperiencia(experiencia: Experiencia): Observable<Experiencia>{
+  postExperiencia(experiencia: Experiencia): Observable<Experiencia>{
     const url: string = this.apiUrl + "/edit/experiencia/crear";
     return this.http.post<Experiencia>(url, experiencia, httpOptions);
   }
-  createFormacion(formacion: Formacion): Observable<Formacion>{
+  postFormacion(formacion: Formacion): Observable<Formacion>{
     const url: string = this.apiUrl + "/edit/formacion/crear";
     return this.http.post<Formacion>(url, formacion, httpOptions);
   }
 
-  deleteContacto(contacto: Contacto): Observable<String>{
-    const url: string = this.apiUrl + `/edit/contacto/eliminar/${contacto.id}`;
+  deleteContacto(id: number): Observable<String>{
+    const url: string = this.apiUrl + `/edit/contacto/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
-  deleteHabilidad(habilidad: Habilidad): Observable<String>{
-    const url: string = this.apiUrl + "/edit/habilidad/crear";
+  deleteHabilidad(id: number): Observable<String>{
+    const url: string = this.apiUrl + `/edit/habilidad/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
-  deleteProyecto(proyecto: Proyecto): Observable<String>{
-    const url: string = this.apiUrl + "/edit/proyecto/crear";
+  deleteProyecto(id: number): Observable<String>{
+    const url: string = this.apiUrl + `/edit/proyecto/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
-  deleteExperiencia(experiencia: Experiencia): Observable<String>{
-    const url: string = this.apiUrl + "/edit/experiencia/crear";
+  deleteExperiencia(id: number): Observable<String>{
+    const url: string = this.apiUrl + `/edit/experiencia/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
-  deleteFormacion(formacion: Formacion): Observable<String>{
-    const url: string = this.apiUrl + "/edit/formacion/crear";
+  deleteFormacion(id: number): Observable<String>{
+    const url: string = this.apiUrl + `/edit/formacion/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
 }

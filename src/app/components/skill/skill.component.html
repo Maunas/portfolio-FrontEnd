@@ -1,17 +1,15 @@
-<section>
-  <h4>Skills</h4>
+<section class="card">
+  <h4 class="card-header">Skills</h4>
 
   <div class="lista">
     <h5>
       Hard Skills
-      <div class="botones-grupo">
-        <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
-      </div>
     </h5>
     <div class="listaskills">
       <app-item-skill
         *ngFor="let skill of habilidadHard"
         [skill]="skill"
+        class="m-2"
       ></app-item-skill>
     </div>
   </div>
@@ -19,14 +17,12 @@
   <div class="lista">
     <h5>
       Soft Skills
-      <div class="botones-grupo">
-        <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
-      </div>
     </h5>
     <div class="listaskills">
       <app-item-skill
         *ngFor="let skill of habilidadSoft"
         [skill]="skill"
+        class="m-2"
       ></app-item-skill>
     </div>
   </div>

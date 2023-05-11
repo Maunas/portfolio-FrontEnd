@@ -13,12 +13,16 @@ export class FormPersonaComponent {
   selected: boolean = false;
   @Output()
   onSelectObjeto: EventEmitter<Persona> = new EventEmitter<Persona>();
+  @Output()
+  editPersona: EventEmitter<Persona> = new EventEmitter<Persona>();
   edad: number = 23;
 
   modificarPersona: boolean = false;
 
-  onEditPersona(persona: Persona){
+  onSelectPersona(persona: Persona){
     this.onSelectObjeto.emit(persona);
   }
-
+  onEditPersona(persona: Persona){
+    this.editPersona.emit(persona);
+  }
 }

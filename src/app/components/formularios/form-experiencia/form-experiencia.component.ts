@@ -17,15 +17,20 @@ export class FormExperienciaComponent {
   onSelectObjeto: EventEmitter<Experiencia> = new EventEmitter<Experiencia>();
   @Output()
   deleteExperiencia: EventEmitter<number> = new EventEmitter<number>();
+    @Output()
+  editExperiencia: EventEmitter<Experiencia> = new EventEmitter<Experiencia>();
+
 icono = faBriefcase;
 
   onDeleteExperiencia(exp: Experiencia){
     this.deleteExperiencia.emit(exp.idExperiencia);
   }
 
-  onEditExperiencia(exp:Experiencia){
+  onSelectExperiencia(exp:Experiencia){
     this.onSelectObjeto.emit(exp);
   }
-  
+  onEditExperiencia(exp:Experiencia){
+    this.editExperiencia.emit(exp);
+  }
   
 }

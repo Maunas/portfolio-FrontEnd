@@ -2,7 +2,12 @@
     height: 25px;
     border-radius: 20px;
     padding: 1em;
+    overflow: hidden;
     font-size: small;
+  }
+  .boton.modificar p{
+    width:50px;
+    margin: auto;
   }
   .boton.modificar div{
     width:0;

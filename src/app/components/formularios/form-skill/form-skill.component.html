@@ -1,0 +1,45 @@
+<section class="card">
+<h4 class="card-header">Skills</h4>
+    
+  
+    <div class="lista">
+      <h5>
+        Hard Skills
+        <div class="botones-grupo">
+          <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
+        </div>
+      </h5>
+      <div class="listaskills">
+        <app-form-item-skill
+          *ngFor="let skill of habilidadHard"
+          [skill]="skill"
+          [selected]="skill === selectedItem"
+          (deleteHabilidad)="onDeleteHabilidad($event)"
+          (onSelectObjeto)="onSelectHabilidad($event)"
+          (editHabilidad)="onEditHabilidad($event)"
+          class="m-2"
+        ></app-form-item-skill>
+      </div>
+    </div>
+  
+    <div class="lista">
+      <h5>
+        Soft Skills
+        <div class="botones-grupo">
+          <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
+        </div>
+      </h5>
+      <div class="listaskills">
+        <app-form-item-skill
+          *ngFor="let skill of habilidadSoft"
+          [skill]="skill"
+          [selected]="skill === selectedItem"
+          (deleteHabilidad)="onDeleteHabilidad($event)"
+          (onSelectObjeto)="onSelectHabilidad($event)"
+          (editHabilidad)="onEditHabilidad($event)"
+          class="m-2"
+        ></app-form-item-skill >
+      </div>
+    </div>
+  </section>
+  

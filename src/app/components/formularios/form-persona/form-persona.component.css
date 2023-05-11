@@ -36,3 +36,6 @@ section{
     height: 3em;
     margin:1em;
   }
+  .boton-editar-persona{
+    margin: 1em 2em 0 auto; 
+  }

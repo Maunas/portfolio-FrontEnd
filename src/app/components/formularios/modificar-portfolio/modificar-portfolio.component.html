@@ -1,0 +1,17 @@
+<app-form-contacto [contacto]="portfolio.contacto"></app-form-contacto>
+<div class="portfolio">
+  <app-form-persona [persona]="portfolio.persona" [selected]="selectedItem === portfolio.persona"
+    (onSelectObjeto)="seleccionarObjeto(portfolio.persona)" (editPersona)="editarPersona($event)"></app-form-persona>
+
+  <app-form-experiencia [experiencia]="portfolio.experiencia" (onSelectObjeto)="seleccionarObjeto($event)"
+    [selectedItem]='selectedItem' (deleteExperiencia)="eliminarExperiencia($event)" (editExperiencia)="editarExperiencia($event)"></app-form-experiencia>
+
+  <app-form-formacion [formacion]="portfolio.formacion" (onSelectObjeto)="seleccionarObjeto($event)"
+    [selectedItem]='selectedItem' (deleteFormacion)="eliminarFormacion($event)" (editFormacion)="editarFormacion($event)"></app-form-formacion>
+
+  <app-form-skill [habilidad]="portfolio.habilidad" (onSelectObjeto)="seleccionarObjeto($event)"
+    [selectedItem]='selectedItem' (deleteHabilidad)="eliminarHabilidad($event)" (editHabilidad)="editarHabilidad($event)"></app-form-skill>
+
+  <app-form-proyecto [proyecto]="portfolio.proyecto" (onSelectObjeto)="seleccionarObjeto($event)"
+    [selectedItem]='selectedItem' (deleteProyecto)="eliminarProyecto($event)" (editProyecto)="editarProyecto($event)"></app-form-proyecto>
+</div>

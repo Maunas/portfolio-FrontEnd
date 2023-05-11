@@ -1,0 +1,40 @@
+<div class="d-flex flex-row justify-content-end">
+    <app-boton-modificar [accion]="'Editar'" (click)="onSelectHabilidad(skill)"></app-boton-modificar>
+    <app-boton-modificar [accion]="'Eliminar'" (click)="onDeleteHabilidad(skill)"></app-boton-modificar>
+</div>
+<form (ngSubmit)="onEditHabilidad(skill)">
+    <fieldset [disabled]="!(selected)">
+        <div class="skill-item">
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                <input type="text" id="nombreHabilidad" class="form-control" name="nombreHabilidad"
+                    placeholder="{{skill.nombreHabilidad}}" [(ngModel)]="skill.nombreHabilidad" />
+            </div>
+            <div class="d-flex flex-row gap-3 align-content-center">
+                <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                    <input type="number" id="nivelHabilidad" class="form-control" name="nivelHabilidad"
+                        placeholder="{{skill.nivelHabilidad}}" [(ngModel)]="skill.nivelHabilidad" />
+                </div>
+                <p>de</p>
+                <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                    <input type="number" id="valorMax" class="form-control" name="valorMax"
+                        placeholder="{{skill.valorMax}}" [(ngModel)]="skill.valorMax" />
+                </div>
+            </div>
+
+            <div class="flexbox-row">
+                <div class="total">
+                    <div class="progreso" [ngStyle]="{
+            width: (skill.nivelHabilidad / skill.valorMax) * 100 + '%'
+          }"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !selected }">
+                Guardar
+            </button>
+        </div>
+    </fieldset>
+</form>

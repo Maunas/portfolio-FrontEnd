@@ -2,6 +2,7 @@
     --primario-1: #f4f5fa;
     --primario-2: #eeeeee;
     --neutro: #1b1b27;
+        --neutro-2: #313949;
     --acento: #139b9b;
   }
   body {
@@ -17,7 +18,10 @@
     /*Bootstrap interfiere con el subrayado*/
     text-decoration: none !important;
   }
-
+  .card-header{
+    background-color: var(--neutro-2);
+    color: var(--primario-1);
+  }
   .contacto {
     display: flex;
     flex-direction: row;
@@ -56,7 +60,6 @@
 
 
   section {
-    padding: 1em;
     background-color: var(--primario-2);
     border-radius: 10px;
     box-shadow: 2px 2px 10px var(--neutro);
@@ -105,22 +108,10 @@
   h4,
   h5,
   .itemlista,
-  .infoitem,
-  .flexbox-row {
+  .infoitem {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
   }
-  h4,
-  h5{
-    justify-content: space-between;
-  }
-  h4,
-  h5,
-  p {
-    margin: 8px 0 0 0;
-  }
-  app-boton-modificar{
-    border: 1px red dashed;
-  }
+

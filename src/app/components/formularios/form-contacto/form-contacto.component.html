@@ -6,7 +6,7 @@
 
     <app-contacto *ngFor="let cont of contacto" [contacto]="cont" [modificar]="true"
       (click)="onSelectContacto(cont)"></app-contacto>
-    <a href="/portfolio"><button class="boton gris">Cerrar Sesión</button></a>
+    <button class="boton gris" routerLink="/portfolio">Cerrar Sesión</button>
   </div>
 </header>
 

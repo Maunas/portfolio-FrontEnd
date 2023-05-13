@@ -5,8 +5,10 @@
 
   <div class="itemlista" *ngFor="let form of formacion">
     <div class="infoitem">
-      <div class="imagen">
-        <div *ngIf="form.urlImagen != ''; else placeholder"><img src="{{ form.urlImagen }}"/></div>
+      <div class="imagen d-flex align-items-center justify-content-center">
+        <div *ngIf="form.urlImagen != ''; else placeholder">
+          <img class="img-thumbnail img-fluid" src="{{ form.urlImagen }}"/>
+        </div>
         <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
       </div>
       <div class="infoitem-detalle">

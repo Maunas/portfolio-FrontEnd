@@ -15,7 +15,6 @@
   }
 
   a{
-    /*Bootstrap interfiere con el subrayado*/
     text-decoration: none !important;
   }
   .card-header{
@@ -80,15 +79,18 @@
     margin: 1em 2em;
     justify-content: space-between;
   }
-  .infoitem .imagen {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  .imagen{
     width: 150px;
-    height: 100px;
-    object-fit: scale-down;
-    font-size: 40px;
-    border-radius: 10px;
+    height: 150px;
+    margin:1em;
+  }
+  .imagen img{
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .placeholder{
+    width: 100%;
+    height: 100%;
   }
   .infoitem-detalle {
     display: flex;
@@ -114,7 +116,13 @@
     flex-direction: row;
     gap: 8px;
   }
-  
+  .portfolio{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    margin: 3em auto;
+    gap:8px;
+}
   h2,
   h4,
   h5,

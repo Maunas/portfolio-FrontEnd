@@ -8,9 +8,14 @@
 
 <div class="itemlista" *ngIf="agregar; else modificarexperiencia">
   <div class="infoitem">
-    <div class="imagen">
-      <div *ngIf="nuevaExperiencia.urlImagen != ''; else placeholder"><img src="{{ nuevaExperiencia.urlImagen }}" /></div>
-      <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+    <div class="imagen d-flex align-items-center justify-content-center">
+      <div *ngIf="nuevaExperiencia.urlImagen != ''; else placeholder">
+        <img class="img-thumbnail" src="{{ nuevaExperiencia.urlImagen }}" alt="{{nuevaExperiencia.institucion}}"/>
+      </div>
+      <ng-template #placeholder>
+        <div class="placeholder img-thumbnail d-flex align-items-center justify-content-center" style="background-color: var(--primario-2); ">
+          <fa-icon [icon]="icono" style="font-size: 50px;"></fa-icon></div>
+      </ng-template>
     </div>
     <div class="infoitem-detalle">
       <form >
@@ -59,9 +64,14 @@
 <ng-template #modificarexperiencia>
   <div class="itemlista" *ngFor="let exp of experiencia" >
     <div class="infoitem">
-      <div class="imagen">
-        <div *ngIf="exp.urlImagen != ''; else placeholder"><img src="{{ exp.urlImagen }}" /></div>
-        <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+      <div class="imagen d-flex align-items-center justify-content-center">
+        <div *ngIf="nuevaExperiencia.urlImagen != ''; else placeholder">
+          <img class="img-thumbnail" src="{{ nuevaExperiencia.urlImagen }}" alt="{{nuevaExperiencia.institucion}}"/>
+        </div>
+        <ng-template #placeholder>
+          <div class="placeholder img-thumbnail d-flex align-items-center justify-content-center" style="background-color: var(--primario-2); ">
+            <fa-icon [icon]="icono" style="font-size: 50px;"></fa-icon></div>
+        </ng-template>
       </div>
       <div class="infoitem-detalle">
         <form (ngSubmit)="onEditExperiencia(exp)">

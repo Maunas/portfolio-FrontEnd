@@ -7,9 +7,12 @@
     <div class="infoitem">
       <div class="imagen d-flex align-items-center justify-content-center">
         <div *ngIf="exp.urlImagen != ''; else placeholder">
-          <img class="img-thumbnail img-fluid" src="{{ exp.urlImagen }}"/>
+          <img class="img-thumbnail" src="{{ exp.urlImagen }}" alt="{{exp.institucion}}"/>
         </div>
-        <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+        <ng-template #placeholder>
+          <div class="placeholder img-thumbnail d-flex align-items-center justify-content-center" style="background-color: var(--primario-2); ">
+            <fa-icon [icon]="icono" style="font-size: 50px;"></fa-icon></div>
+        </ng-template>
       </div>
       
       <div class="infoitem-detalle">

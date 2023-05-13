@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormHabilidadComponent } from './form-habilidad.component';
+import { FormSkillComponent } from './form-skill.component';
 
-describe('FormHabilidadComponent', () => {
-  let component: FormHabilidadComponent;
-  let fixture: ComponentFixture<FormHabilidadComponent>;
+describe('FormSkillComponent', () => {
+  let component: FormSkillComponent;
+  let fixture: ComponentFixture<FormSkillComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormHabilidadComponent ]
+      declarations: [ FormSkillComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FormHabilidadComponent);
+    fixture = TestBed.createComponent(FormSkillComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

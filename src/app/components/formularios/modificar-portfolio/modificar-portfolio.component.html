@@ -1,0 +1,29 @@
+<app-form-contacto [contacto]="portfolio.contacto"
+  (deleteContacto)="eliminarContacto($event)"
+  (editContacto)="editarContacto($event)"
+  (newContacto)="crearContacto($event)"></app-form-contacto>
+  
+<div class="portfolio">
+  <app-form-persona [persona]="portfolio.persona"
+    (editPersona)="editarPersona($event)"></app-form-persona>
+
+  <app-form-experiencia [experiencia]="portfolio.experiencia"
+     (deleteExperiencia)="eliminarExperiencia($event)"
+    (editExperiencia)="editarExperiencia($event)"
+    (newExperiencia)="crearExperiencia($event)"></app-form-experiencia>
+
+  <app-form-formacion [formacion]="portfolio.formacion"
+     (deleteFormacion)="eliminarFormacion($event)"
+    (editFormacion)="editarFormacion($event)"
+    (newFormacion)="crearFormacion($event)"></app-form-formacion>
+
+  <app-form-skill [habilidad]="portfolio.habilidad" 
+     (deleteHabilidad)="eliminarHabilidad($event)"
+    (editHabilidad)="editarHabilidad($event)"
+    (newHabilidad)="crearHabilidad($event)"></app-form-skill>
+
+  <app-form-proyecto [proyecto]="portfolio.proyecto" 
+     (deleteProyecto)="eliminarProyecto($event)"
+    (editProyecto)="editarProyecto($event)"
+    (newProyecto)="crearProyecto($event)"></app-form-proyecto>
+</div>

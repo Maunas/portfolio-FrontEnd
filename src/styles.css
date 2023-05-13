@@ -2,6 +2,7 @@
     --primario-1: #f4f5fa;
     --primario-2: #eeeeee;
     --neutro: #1b1b27;
+        --neutro-2: #313949;
     --acento: #139b9b;
   }
   body {
@@ -17,7 +18,10 @@
     /*Bootstrap interfiere con el subrayado*/
     text-decoration: none !important;
   }
-
+  .card-header{
+    background-color: var(--neutro-2);
+    color: var(--primario-1);
+  }
   .contacto {
     display: flex;
     flex-direction: row;
@@ -53,10 +57,20 @@
     background-color: transparent;
     transition: all 0.05s ease-in-out;
   }
-
+  .boton.eliminar {
+    border-color: red;
+    color: red;
+  }
+  .boton.eliminar:hover {
+    background-color: red;
+    color: var(--primario-1);
+  }
+  .boton.eliminar:active {
+    background-color: transparent;
+    color: red;
+  }
 
   section {
-    padding: 1em;
     background-color: var(--primario-2);
     border-radius: 10px;
     box-shadow: 2px 2px 10px var(--neutro);
@@ -98,8 +112,6 @@
   .botones-grupo {
     display: flex;
     flex-direction: row;
-    height: 30px;
-    width: 68px;
     gap: 8px;
   }
   
@@ -107,20 +119,19 @@
   h4,
   h5,
   .itemlista,
-  .infoitem,
-  .flexbox-row {
+  .infoitem {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
   }
-  h4,
-  h5{
-    justify-content: space-between;
+  .total {
+    width: 250px;
+    height: 1em;
+    border-radius: 10px;
+    overflow: hidden;
   }
-  h4,
-  h5,
-  p {
-    margin: 8px 0 0 0;
+  .progreso {
+    height: 1em;
+    border-radius: 10px 0px 0px 10px;
   }
-  

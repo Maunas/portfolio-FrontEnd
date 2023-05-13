@@ -1,4 +1,4 @@
-import { Component , Input } from '@angular/core';
+import { Component , Input, SimpleChanges } from '@angular/core';
 import { Habilidad } from '../../interfaces';
 
 @Component({
@@ -10,18 +10,16 @@ export class SkillComponent {
 
   @Input()
   habilidad: Habilidad[] = [];
+
   habilidadHard: Habilidad[] = [];
   habilidadSoft: Habilidad[] = [];
 
-  ngOnInit(){
+  ngOnChanges(changes: SimpleChanges){
     this.filtrarHabilidad();
   }
+
   filtrarHabilidad(){
-    for(let skill of this.habilidad){
-      switch(skill.tipoSkill){
-        case 'Hard':this.habilidadHard.push(skill); break;
-        case 'Soft':this.habilidadSoft.push(skill); break;
-      }
-    }
+    this.habilidadHard = this.habilidad.filter((item) => item.tipoSkill === 'Hard')
+    this.habilidadSoft = this.habilidad.filter((item) => item.tipoSkill === 'Soft')
   }
 } 

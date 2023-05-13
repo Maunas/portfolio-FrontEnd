@@ -1,0 +1,80 @@
+<section class="card">
+  <h4 class="card-header d-flex flex-row justify-content-between">Skills
+    <div class="botones-grupo">
+      <app-boton-modificar [accion]="'Agregar'" (click)="onAddHabilidad(habilidad)"></app-boton-modificar>
+    </div>
+  </h4>
+
+  <div class="lista" *ngIf="agregar; else: modificarskill">
+    <form>
+      <fieldset>
+        <div class="skill-item">
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newfechaHasta" class="col-form-label col-4">Nombre</label>
+            <input type=text autocomplete="off" id="nombreHabilidad" class="form-control" name="nombreHabilidad"
+              [(ngModel)]="nuevaHabilidad.nombreHabilidad" />
+          </div>
+          <div class="d-flex flex-row gap-3 align-content-center">
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <input type="number" id="nivelHabilidad" class="form-control" name="nivelHabilidad"
+                placeholder="{{nuevaHabilidad.nivelHabilidad}}" [(ngModel)]="nuevaHabilidad.nivelHabilidad" />
+            </div>
+            <p>de</p>
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <input type="number" id="valorMax" class="form-control" name="valorMax" placeholder="{{nuevaHabilidad.valorMax}}"
+                [(ngModel)]="nuevaHabilidad.valorMax" />
+            </div>
+          </div>
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="tipoSkill" class="col-form-label col-4">Tipo de Skill</label>
+          <select class="form-select" id="tipoSkill" name="tipoSkill" [(ngModel)]="nuevaHabilidad.tipoSkill">
+            <option value="Hard" selected>Hard Skill</option>
+            <option value="Soft">Soft Skill</option>
+          </select>
+        </div>
+          <div class="flexbox-row">
+            <div class="total">
+              <div class="progreso" [ngStyle]="{
+            width: (nuevaHabilidad.nivelHabilidad / nuevaHabilidad.valorMax) * 100 + '%'
+          }"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button class="boton col-auto eliminar" (click)="onDeselect()">
+            Cancelar
+          </button>
+          <button type="submit" class="boton col-auto" (click)="onNewHabilidad()">
+            Guardar Cambios
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <ng-template #modificarskill>
+    <div class="lista">
+      <h5>
+        Hard Skills
+      </h5>
+      <div class="listaskills">
+        <app-form-item-skill *ngFor="let skill of habilidadHard" [skill]="skill" [selected]="skill === modificar"
+          (deleteHabilidad)="onDeleteHabilidad($event)" (onSelectObjeto)="onSelectHabilidad($event)"
+          (editHabilidad)="onEditHabilidad($event)" class="m-2"></app-form-item-skill>
+      </div>
+    </div>
+
+    <div class="lista">
+      <h5>
+        Soft Skills
+      </h5>
+      <div class="listaskills">
+        <app-form-item-skill *ngFor="let skill of habilidadSoft" [skill]="skill" [selected]="skill === modificar"
+          (deleteHabilidad)="onDeleteHabilidad($event)" (onSelectObjeto)="onSelectHabilidad($event)"
+          (editHabilidad)="onEditHabilidad($event)" class="m-2"></app-form-item-skill>
+      </div>
+    </div>
+  </ng-template>
+</section>

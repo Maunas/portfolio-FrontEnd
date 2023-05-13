@@ -1,0 +1,46 @@
+header {
+  background-color: var(--neutro);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 2em;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    margin: 3em auto;
+    gap:8px;
+}
+.logoAP {
+  height: 70%;
+}
+.logoAP img {
+  height: 100%;
+}
+.contacto {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.contacto .boton {
+  margin: 0 1em;
+}
+.boton.gris {
+  border-color: lightgray;
+  color: lightgray;
+}
+.boton.gris:hover {
+  background-color: lightgray;
+  color: var(--neutro);
+}
+.boton.gris:active {
+  background-color: transparent;
+  color: lightgray;
+}
+
+.interior{
+  padding: 1em 2em;
+}

@@ -1,0 +1,112 @@
+<section class="card">
+  <h4 class="card-header d-flex flex-row justify-content-between">
+    Experiencia Laboral
+    <div class="botones-grupo">
+      <app-boton-modificar [accion]="'Agregar'" (click)="onAddExperiencia(experiencia)"></app-boton-modificar>
+    </div>
+  </h4>
+
+<div class="itemlista" *ngIf="agregar; else modificarexperiencia">
+  <div class="infoitem">
+    <div class="imagen">
+      <div *ngIf="nuevaExperiencia.urlImagen != ''; else placeholder"><img src="{{ nuevaExperiencia.urlImagen }}" /></div>
+      <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+    </div>
+    <div class="infoitem-detalle">
+      <form >
+        <fieldset>
+
+
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newpuesto" class="col-form-label col-4">Puesto</label>
+            <input type=text autocomplete="off" id="newpuesto" class="form-control" name="puesto" [(ngModel)]="nuevaExperiencia.puesto" />
+          </div>
+
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newfechaDesde" class="col-form-label col-4">Fecha de Inicio</label>
+            <input type="date" id="newfechaDesde" class="form-control" name="fechaDesde" [(ngModel)]="nuevaExperiencia.fechaDesde" />
+          </div>
+
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newfechaHasta" class="col-form-label col-4">Fecha de Fin</label>
+            <input type="date" id="newfechaHasta" class="form-control" name="fechaHasta" [(ngModel)]="nuevaExperiencia.fechaHasta" />
+          </div>
+
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newinstitucion" class="col-form-label col-4">Institución</label>
+            <input type=text autocomplete="off" id="newinstitucion" class="form-control" name="institucion"
+              [(ngModel)]="nuevaExperiencia.institucion" />
+          </div>
+
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="newurlImagen" class="col-form-label col-4">Url Imagen</label>
+            <input type=text autocomplete="off" id="newurlImagen" class="form-control" name="urlImagen" [(ngModel)]="nuevaExperiencia.urlImagen" />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button class="boton col-auto eliminar" (click)="onDeselect()">
+              Cancelar
+            </button>
+            <button type="submit" class="boton col-auto" (click)="onNewExperiencia()">
+              Guardar Cambios
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #modificarexperiencia>
+  <div class="itemlista" *ngFor="let exp of experiencia" >
+    <div class="infoitem">
+      <div class="imagen">
+        <div *ngIf="exp.urlImagen != ''; else placeholder"><img src="{{ exp.urlImagen }}" /></div>
+        <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+      </div>
+      <div class="infoitem-detalle">
+        <form (ngSubmit)="onEditExperiencia(exp)">
+          <fieldset [disabled]="!(modificar === exp)">
+
+
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="puesto" class="col-form-label col-4">Puesto</label>
+              <input type=text autocomplete="off" id="puesto" class="form-control" name="puesto" [(ngModel)]="exp.puesto" />
+            </div>
+
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="fechaDesde" class="col-form-label col-4">Fecha de Inicio</label>
+              <input type="date" id="fechaDesde" class="form-control" name="fechaDesde" [(ngModel)]="exp.fechaDesde" />
+            </div>
+
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="fechaHasta" class="col-form-label col-4">Fecha de Fin</label>
+              <input type="date" id="fechaHasta" class="form-control" name="fechaHasta" [(ngModel)]="exp.fechaHasta" />
+            </div>
+
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="institucion" class="col-form-label col-4">Institución</label>
+              <input type=text autocomplete="off" id="institucion" class="form-control" name="institucion"
+                [(ngModel)]="exp.institucion" />
+            </div>
+
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="urlImagen" class="col-form-label col-4">Url Imagen</label>
+              <input type=text autocomplete="off" id="urlImagen" class="form-control" name="urlImagen" [(ngModel)]="exp.urlImagen" />
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !(modificar === exp) }">
+                Guardar Cambios
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex flex-row align-self-start">
+      <app-boton-modificar [accion]="'Editar'" (click)="onSelectExperiencia(exp)"></app-boton-modificar>
+      <app-boton-modificar [accion]="'Eliminar'" (click)="onDeleteExperiencia(exp)"></app-boton-modificar>
+    </div>
+
+  </div>
+</ng-template>
+</section>

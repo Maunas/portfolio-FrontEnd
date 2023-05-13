@@ -1,0 +1,15 @@
+.lista{
+    margin: 1em 2em;
+}
+.listaskills{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%;
+    margin: 1em auto;
+}
+.skill-item{
+    margin: auto;
+    width: 250px;
+  }

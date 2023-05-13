@@ -1,9 +1,6 @@
-<section>
-  <h4>
+<section class="card">
+  <h4 class="card-header">
     Formación Profesional
-    <div class="botones-grupo">
-      <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-    </div>
   </h4>
 
   <div class="itemlista" *ngFor="let form of formacion">
@@ -13,12 +10,7 @@
         <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
       </div>
       <div class="infoitem-detalle">
-        <h5>
-          {{ form.carrera }}
-          <div class="botones-grupo">
-            <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
-            <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
-          </div>
+        <h5>{{ form.carrera }}
         </h5>
         <p class="cursiva">
           <span *ngIf="form.fechaFin; then fechafin; else encurso"></span>

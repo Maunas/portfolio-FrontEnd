@@ -1,0 +1,83 @@
+<section class="card">
+    <h4 class="card-header d-flex flex-row justify-content-between">Proyectos Realizados
+        <div class="botones-grupo">
+            <app-boton-modificar [accion]="'Agregar'" (click)="onAddProyecto(proyecto)"></app-boton-modificar>
+        </div>
+    </h4>
+
+    <div class="itemlista" *ngIf="agregar; else modificarproyecto">
+        <div class="infoitem">
+          <div class="infoitem-detalle">
+            <form >
+              <fieldset>
+      
+      
+                <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                  <label for="newtitulo" class="col-form-label col-4">Título del Proyecto</label>
+                  <input type=text autocomplete="off" id="newtitulo" class="form-control" name="tituloProyecto" [(ngModel)]="nuevoProyecto.tituloProyecto" />
+                </div>
+      
+                <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                  <label for="newdescripcion" class="col-form-label col-4">Descripción</label>
+                  <textarea id="descripcion" class="form-control" rows="2" name="descripcion"
+                                [(ngModel)]="nuevoProyecto.descripcion"></textarea>
+                </div>
+      
+                <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                  <label for="newurlProyecto" class="col-form-label col-4">Enlace al Proyecto</label>
+                  <input type=text autocomplete="off" id="newurlProyecto" class="form-control" name="urlProyecto" [(ngModel)]="nuevoProyecto.urlProyecto" />
+                </div>
+
+                <div class="d-flex justify-content-end">
+                  <button class="boton col-auto eliminar" (click)="onDeselect()">
+                    Cancelar
+                  </button>
+                  <button type="submit" class="boton col-auto" (click)="onNewProyecto()">
+                    Guardar Cambios
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<ng-template #modificarproyecto>
+    <div class="itemlista" *ngFor="let proy of proyecto">
+        <div class="infoitem">
+            <div class="infoitem-detalle">
+
+                <form (ngSubmit)="onEditProyecto(proy)">
+                    <fieldset [disabled]="!(modificar === proy)">
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="tituloProyecto" class="col-form-label col-4">Título del Proyecto</label>
+                            <input type=text autocomplete="off" id="tituloProyecto" class="form-control" name="tituloProyecto"
+                                [(ngModel)]="proy.tituloProyecto" />
+                        </div>
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="descripcion" class="col-form-label col-4">Descripción</label>
+                            <textarea id="descripcion" class="form-control" rows="2" name="descripcion"
+                                [(ngModel)]="proy.descripcion"></textarea>
+                        </div>
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="urlProyecto" class="col-form-label col-4">Enlace al Proyecto</label>
+                            <input type=text autocomplete="off" id="urlProyecto" class="form-control" name="urlProyecto"
+                                [(ngModel)]="proy.urlProyecto" />
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="boton col-auto"
+                                [ngClass]="{ 'btn btn-outline-secondary': !(modificar === proy) }">
+                                Guardar Cambios
+                            </button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex flex-row align-self-start">
+            <app-boton-modificar [accion]="'Editar'" (click)="onSelectProyecto(proy)"></app-boton-modificar>
+            <app-boton-modificar [accion]="'Eliminar'" (click)="onDeleteProyecto(proy)"></app-boton-modificar> 
+        </div>
+    </div>
+</ng-template>
+</section>

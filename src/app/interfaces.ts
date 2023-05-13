@@ -1,10 +1,10 @@
 export interface Contacto{
-    id: number;
+    id?: number;
     nombreContacto: string;
     urlContacto: string;
 }
 export interface Persona{
-    idPersona: number;
+    idPersona?: number;
     nombreCompleto: string;
     nacimiento: Date;
     profesion: string;
@@ -13,7 +13,7 @@ export interface Persona{
     urlBanner: string;
 }
 export interface Experiencia{
-    idExperiencia: number;
+    idExperiencia?: number;
     puesto: string;
     institucion: string;
     urlImagen?: string;
@@ -21,20 +21,20 @@ export interface Experiencia{
     fechaHasta?: Date;
 }
 export interface Formacion{
-    idFormacion: number;
+    idFormacion?: number;
     institucion: string;
     carrera: string;
     urlImagen?: string;
     fechaFin?: Date;
 }
 export interface Proyecto{
-    idProyecto: number;
+    idProyecto?: number;
     tituloProyecto: string;
     urlProyecto?: string;
     descripcion: string;
 }
 export interface Habilidad{
-    idHabilidad: number;
+    idHabilidad?: number;
     nombreHabilidad: string;
     valorMax: number;
     nivelHabilidad: number;

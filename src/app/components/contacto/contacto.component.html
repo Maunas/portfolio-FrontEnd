@@ -1,4 +1,10 @@
-<a class="text-decoration-none" href="{{contacto.urlContacto}}">
+<a class="text-decoration-none" href="{{contacto.urlContacto}}" *ngIf="!modificar; else: seleccionar">
     <fa-icon [icon]="faIcon"></fa-icon>
     <p>{{contacto.nombreContacto}}</p>
 </a>
+<ng-template #seleccionar>
+    <div> 
+        <fa-icon [icon]="faIcon"></fa-icon>
+        <p>{{contacto.nombreContacto}}</p>
+    </div>
+</ng-template>

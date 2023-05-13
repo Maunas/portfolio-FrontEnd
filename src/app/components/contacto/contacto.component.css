@@ -1,4 +1,4 @@
-a {
+a, div{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,8 @@ a {
   transition: all 0.2s ease-in-out;
   overflow: hidden;
 }
-a:hover {
-  background-color: #333344;
+a:hover, div:hover {
+  background-color: var(--neutro-2);
   transition: all 0.2s ease-in-out;
 }
 p {
@@ -21,7 +21,7 @@ p {
   height: 0px;
   transition: height 0.2s ease-in-out;
 }
-a:hover p {
+a:hover p, div:hover p {
   height: 20px;
   transition: height 0.2s ease-in-out;
 }
@@ -30,7 +30,7 @@ fa-icon {
   font-size: 30px;
   transition: all 0.2s ease-in-out;
 }
-a:hover fa-icon {
+a:hover fa-icon, div:hover fa-icon {
   color: aliceblue;
   font-size: 25px;
   transition: all 0.2s ease-in-out;

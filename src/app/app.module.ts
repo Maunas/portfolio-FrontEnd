@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,12 +19,14 @@ import { SkillComponent } from './components/skill/skill.component';
 import { BotonModificarComponent } from './components/boton-modificar/boton-modificar.component';
 import { ItemSkillComponent } from './components/item-skill/item-skill.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormPersonaComponent } from './components/form-persona/form-persona.component';
-import { FormExperienciaComponent } from './components/form-experiencia/form-experiencia.component';
-import { FormFormacionComponent } from './components/form-formacion/form-formacion.component';
-import { FormHabilidadComponent } from './components/form-habilidad/form-habilidad.component';
-import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.component';
-import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
+import { FormPersonaComponent } from './components/formularios/form-persona/form-persona.component';
+import { FormExperienciaComponent } from './components/formularios/form-experiencia/form-experiencia.component';
+import { FormFormacionComponent } from './components/formularios/form-formacion/form-formacion.component';
+import { FormSkillComponent } from './components/formularios/form-skill/form-skill.component';
+import { FormProyectoComponent } from './components/formularios/form-proyecto/form-proyecto.component';
+import { FormContactoComponent } from './components/formularios/form-contacto/form-contacto.component';
+import { ModificarPortfolioComponent } from './components/formularios/modificar-portfolio/modificar-portfolio.component';
+import { FormItemSkillComponent } from './components/formularios/form-item-skill/form-item-skill.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +46,11 @@ import { FormContactoComponent } from './components/form-contacto/form-contacto.
     FormPersonaComponent,
     FormExperienciaComponent,
     FormFormacionComponent,
-    FormHabilidadComponent,
+    FormSkillComponent,
     FormProyectoComponent,
-    FormContactoComponent
+    FormContactoComponent,
+    ModificarPortfolioComponent,
+    FormItemSkillComponent
   ],
   imports: [
     BrowserModule,

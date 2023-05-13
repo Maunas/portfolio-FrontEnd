@@ -1,19 +1,10 @@
-<section>
-  <h4>Proyectos Realizados
-      <div class="botones-grupo">
-          <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-        </div>
-  </h4>
+<section class="card">
+  <h4 class="card-header">Proyectos Realizados  </h4>
 
 <div class="itemlista" *ngFor="let proy of proyecto">
     <div class="infoitem">
       <div class="infoitem-detalle">
-        <h5>{{proy.tituloProyecto}}
-          <div class="botones-grupo">
-            <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
-            <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
-          </div>
-        </h5>
+        <h5>{{proy.tituloProyecto}}</h5>
         <p class="cursiva descripcion">
           {{proy.descripcion}}
         </p>

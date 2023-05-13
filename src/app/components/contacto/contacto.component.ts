@@ -10,7 +10,9 @@ import { faGithub, faLinkedin, faInstagram, faTwitter, faFacebook } from '@forta
 export class ContactoComponent {
   @Input() contacto: Contacto = {} as Contacto;
   faIcon = faGithub;
-
+  @Input()
+  modificar: boolean = false;
+  
   ngOnInit(){
     switch(this.contacto.nombreContacto.toLowerCase()){
       //TODO averiguar enum

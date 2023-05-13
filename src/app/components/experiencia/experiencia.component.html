@@ -1,9 +1,6 @@
-<section>
-  <h4>
+<section class="card">
+  <h4 class="card-header">
     Experiencia Laboral
-    <div class="botones-grupo">
-      <app-boton-modificar [accion]="'agregar'"></app-boton-modificar>
-    </div>
   </h4>
 
   <div class="itemlista" *ngFor="let exp of experiencia">
@@ -16,10 +13,6 @@
       <div class="infoitem-detalle">
         <h5>
           {{ exp.puesto }}
-          <div class="botones-grupo">
-            <app-boton-modificar [accion]="'editar'"></app-boton-modificar>
-            <app-boton-modificar [accion]="'eliminar'"></app-boton-modificar>
-          </div>
         </h5>
         <p class="cursiva">
           {{ exp.fechaDesde }} -

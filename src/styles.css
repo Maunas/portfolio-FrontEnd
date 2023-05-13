@@ -57,7 +57,18 @@
     background-color: transparent;
     transition: all 0.05s ease-in-out;
   }
-
+  .boton.eliminar {
+    border-color: red;
+    color: red;
+  }
+  .boton.eliminar:hover {
+    background-color: red;
+    color: var(--primario-1);
+  }
+  .boton.eliminar:active {
+    background-color: transparent;
+    color: red;
+  }
 
   section {
     background-color: var(--primario-2);
@@ -114,4 +125,13 @@
     align-items: center;
     gap: 8px;
   }
-
+  .total {
+    width: 250px;
+    height: 1em;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .progreso {
+    height: 1em;
+    border-radius: 10px 0px 0px 10px;
+  }

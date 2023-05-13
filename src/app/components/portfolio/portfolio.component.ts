@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Portfolio } from 'src/app/interfaces';
 import { ApiService } from 'src/app/service/api.service';
-import { portfolioPrueba } from 'src/assets/prueba';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,7 +8,7 @@ import { portfolioPrueba } from 'src/assets/prueba';
   styleUrls: ['./portfolio.component.css'],
 })
 export class PortfolioComponent {
-  portfolio: Portfolio = portfolioPrueba;
+  portfolio: Portfolio = {} as Portfolio;
 
   constructor(private apiServ: ApiService){}
 

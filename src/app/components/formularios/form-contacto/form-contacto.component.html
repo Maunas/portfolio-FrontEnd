@@ -1,11 +1,73 @@
 <header class="sticky-top">
   <div class="logoAP">
-    <img src="..\..\..\assets\APLogo-20-20.png" alt="Argentina Programa 4.0" />
+    <img src="{{logo}}" alt="Argentina Programa 4.0" />
   </div>
   <div class="contacto">
 
-    <app-contacto *ngFor="let cont of contacto" [contacto]="cont"></app-contacto>
-    <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
-    <a href="/portfolio"><button class="boton">Cerrar Sesión</button></a>
+    <app-contacto *ngFor="let cont of contacto" [contacto]="cont" [modificar]="true"
+      (click)="onSelectContacto(cont)"></app-contacto>
+    <a href="/portfolio"><button class="boton gris">Cerrar Sesión</button></a>
   </div>
 </header>
+
+<section class="card">
+  <h4 class="card-header card-header d-flex flex-row justify-content-between">
+    Modificar Contactos
+    <div class="botones-grupo">
+      <app-boton-modificar [accion]="'Agregar'" (click)="onAddContacto(contacto)"></app-boton-modificar>
+    </div>
+  </h4>
+  <div *ngIf="(contacto.includes(modificar) || agregar); else: seleccionar" class="m-auto interior">
+    <form>
+      <fieldset>
+
+        <div class="d-flex flex-row mb-2 align-items-center gap-3" *ngIf="agregar; else modificarContacto">
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="nombreContacto" class="col-form-label col-4">Medio de Contacto</label>
+
+            <!--Si se quiere agregar, muestra un formulario vacio-->
+            <input type=text autocomplete="off" id="nombreContacto" class="form-control" name="nombreContacto"
+              [(ngModel)]="nuevoContacto.nombreContacto" />
+          </div>
+          <div class="d-flex flex-row align-items-center gap-3">
+            <label for="urlContacto" class="col-form-label col-4">Enlace</label>
+            <input type=text autocomplete="off" id="urlContacto" class="form-control" name="urlContacto"
+              [(ngModel)]="nuevoContacto.urlContacto" />
+          </div>
+        </div>
+
+        <ng-template #modificarContacto>
+          <div class="d-flex flex-row mb-2 align-items-center gap-3">
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
+              <label for="newNombreContacto" class="col-form-label col-4">Medio de Contacto</label>
+
+              <!--Si se quiere agregar, muestra un formulario vacio-->
+              <input type=text autocomplete="off" id="newNombreContacto" class="form-control" name="nombreContacto"
+                [(ngModel)]="modificar.nombreContacto" />
+            </div>
+            <div class="d-flex flex-row align-items-center gap-3">
+              <label for="newUrlContacto" class="col-form-label col-4">Enlace</label>
+              <input type=text autocomplete="off" id="newUrlContacto" class="form-control" name="urlContacto"
+                [(ngModel)]="modificar.urlContacto" />
+            </div>
+          </div>
+        </ng-template>
+
+          <div class="d-flex justify-content-around">
+            <!--Cancelar si esta en el formulario para agregar, eliminar si esta para modificar-->
+            <button class="boton col-auto eliminar" (click)="agregar ? onDeselect() : onDeleteContacto(modificar)">
+              {{agregar ? 'Cancelar' : 'Eliminar'}}
+            </button>
+            <button class="boton col-auto" (click)="agregar ? onNewContacto() : onEditContacto(modificar)">
+              Guardar Cambios
+            </button>
+          </div>
+
+
+      </fieldset>
+    </form>
+  </div>
+  <ng-template #seleccionar>
+    <p class="interior">Haga click en un contacto para modificarlo o eliminarlo.</p>
+  </ng-template>
+</section>

@@ -1,7 +1,7 @@
 export const portfolioPrueba = {
     "persona": {
         "idPersona": 4,
-        "nombreCompleto": "Go",
+        "nombreCompleto": "Gonzalo",
         "nacimiento": new Date("1999-11-11"),
         "profesion": "adsf",
         "descripcion": "dsfg",

@@ -1,7 +1,8 @@
-import { Output } from '@angular/core';
+import { Output, SimpleChanges } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { Habilidad } from 'src/app/interfaces';
+import { FormularioService } from 'src/app/service/formulario.service';
 
 @Component({
   selector: 'app-form-skill',
@@ -13,25 +14,35 @@ export class FormSkillComponent {
   habilidad: Habilidad[] = [];
   habilidadHard: Habilidad[] = [];
   habilidadSoft: Habilidad[] = [];
-  @Input()
-  selectedItem: any = {};
-  @Output()
-  onSelectObjeto: EventEmitter<Habilidad> = new EventEmitter<Habilidad>();
   @Output()
   deleteHabilidad: EventEmitter<number> = new EventEmitter<number>();
     @Output()
   editHabilidad: EventEmitter<Habilidad> = new EventEmitter<Habilidad>();
+  @Output()
+  newHabilidad: EventEmitter<Habilidad> = new EventEmitter<Habilidad>();
+
+  modificar: Habilidad = {} as Habilidad;
+  agregar: boolean = false;
+  nuevaHabilidad: Habilidad = {nombreHabilidad: '', nivelHabilidad: 0, valorMax:1, tipoSkill:'Hard'} as Habilidad;
+
+constructor(private formServ: FormularioService){}
 
   ngOnInit(){
+    this.formServ.actualizarSeleccion().subscribe(
+      (sel) => {
+        this.modificar = sel.seleccion;
+        this.agregar = (this.habilidad === sel.agregar);
+      }
+    )
+  }
+
+  ngOnChanges(changes: SimpleChanges){
     this.filtrarHabilidad();
   }
+
   filtrarHabilidad(){
-    for(let skill of this.habilidad){
-      switch(skill.tipoSkill){
-        case 'Hard':this.habilidadHard.push(skill); break;
-        case 'Soft':this.habilidadSoft.push(skill); break;
-      }
-    }
+    this.habilidadHard = this.habilidad.filter((item) => item.tipoSkill === 'Hard')
+    this.habilidadSoft = this.habilidad.filter((item) => item.tipoSkill === 'Soft')
   }
 
   onDeleteHabilidad(id: number){
@@ -39,9 +50,24 @@ export class FormSkillComponent {
   }
 
   onSelectHabilidad(skill: Habilidad){
-    this.onSelectObjeto.emit(skill);
+    this.formServ.seleccionarObjeto(skill);
   }
     onEditHabilidad(skill: Habilidad){
     this.editHabilidad.emit(skill);
+    this.filtrarHabilidad();
+    this.formServ.deseleccionarObjeto();
+  }
+  onAddHabilidad(skill: Habilidad[]) {
+    this.formServ.agregarObjeto(skill);
+    this.nuevaHabilidad = {nombreHabilidad: '', nivelHabilidad: 0, valorMax:1, tipoSkill:'Hard'} as Habilidad;
+  }
+  onNewHabilidad() {
+    this.newHabilidad.emit(this.nuevaHabilidad);
+    this.onDeselect();
+    this.filtrarHabilidad();
+  }
+  onDeselect() {
+    this.formServ.deseleccionarObjeto();
+    this.nuevaHabilidad = {nombreHabilidad: '', nivelHabilidad: 0, valorMax:1, tipoSkill:'Hard'} as Habilidad;
   }
 }

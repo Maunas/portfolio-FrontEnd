@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Persona } from 'src/app/interfaces';
+import { FormularioService } from 'src/app/service/formulario.service';
 
 @Component({
   selector: 'app-form-persona',
@@ -9,20 +10,24 @@ import { Persona } from 'src/app/interfaces';
 export class FormPersonaComponent {
   @Input()
   persona: Persona = {} as Persona;
-  @Input()
-  selected: boolean = false;
-  @Output()
-  onSelectObjeto: EventEmitter<Persona> = new EventEmitter<Persona>();
   @Output()
   editPersona: EventEmitter<Persona> = new EventEmitter<Persona>();
   edad: number = 23;
 
-  modificarPersona: boolean = false;
+  modificar: boolean = false;
 
+constructor(private formServ: FormularioService){}
+
+ngOnInit(){
+  this.formServ.actualizarSeleccion().subscribe(
+    (sel) => this.modificar = (sel.seleccion === this.persona)
+  )
+}
   onSelectPersona(persona: Persona){
-    this.onSelectObjeto.emit(persona);
+    this.formServ.seleccionarObjeto(persona);
   }
   onEditPersona(persona: Persona){
     this.editPersona.emit(persona);
+    this.formServ.deseleccionarObjeto();
   }
 }

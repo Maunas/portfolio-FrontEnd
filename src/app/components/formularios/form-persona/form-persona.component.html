@@ -1,11 +1,11 @@
 <section class="card">
-  <img alt="" src="{{ persona.urlBanner }}" class="card-img-top" />
+  <img alt="" src="{{ persona.urlBanner }}" class="card-img-top" style="max-height:500px;"/>
   <div class="boton-editar-persona">
     <app-boton-modificar [accion]="'Editar'" (click)="onSelectPersona(persona)"
       class="d-flex justify-items-center"></app-boton-modificar>
   </div>
   <form (ngSubmit)="onEditPersona(persona)">
-    <fieldset [disabled]="!selected">
+    <fieldset [disabled]="!modificar">
       <div class="personal">
         <div class="perfil">
           <img src="{{ persona.urlFoto }}" alt="Foto de Perfil" class="mb-3" />
@@ -18,14 +18,14 @@
 
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="profesion" class="col-form-label col-3">Ocupacion</label>
-            <input type="text" id="profesion" class="form-control" name="profesion" [(ngModel)]="persona.profesion" />
+            <input type=text autocomplete="off" id="profesion" class="form-control" name="profesion" [(ngModel)]="persona.profesion" />
           </div>
         </div>
 
         <div class="descripcion">
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="nombreCompleto" class="col-form-label col-3">Nombre</label>
-            <input type="text" id="nombreCompleto" class="form-control" name="nombreCompleto"
+            <input type=text autocomplete="off" id="nombreCompleto" class="form-control" name="nombreCompleto"
               [(ngModel)]="persona.nombreCompleto" />
           </div>
 
@@ -38,16 +38,16 @@
 
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="urlFoto" class="col-form-label col-3">Url Foto</label>
-            <input type="text" id="urlFoto" class="form-control" name="urlFoto" [(ngModel)]="persona.urlFoto" />
+            <input type=text autocomplete="off" id="urlFoto" class="form-control" name="urlFoto" [(ngModel)]="persona.urlFoto" />
           </div>
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="urlBanner" class="col-form-label col-3">Url Banner</label>
-            <input type="text" id="urlBanner" class="form-control" name="urlBanner" [(ngModel)]="persona.urlBanner" />
+            <input type=text autocomplete="off" id="urlBanner" class="form-control" name="urlBanner" [(ngModel)]="persona.urlBanner" />
           </div>
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !selected }">
+        <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !modificar }">
           Guardar Cambios
         </button>
       </div>

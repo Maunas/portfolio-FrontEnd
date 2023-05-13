@@ -6,6 +6,13 @@ header {
   height: 70px;
   padding: 0 2em;
 }
+section{
+    display: flex;
+    flex-direction: column;
+    width:80%;
+    margin: 3em auto;
+    gap:8px;
+}
 .logoAP {
   height: 70%;
 }
@@ -21,15 +28,19 @@ header {
 .contacto .boton {
   margin: 0 1em;
 }
-.boton {
+.boton.gris {
   border-color: lightgray;
   color: lightgray;
 }
-.boton:hover {
+.boton.gris:hover {
   background-color: lightgray;
   color: var(--neutro);
 }
-.boton:active {
+.boton.gris:active {
   background-color: transparent;
   color: lightgray;
+}
+
+.interior{
+  padding: 1em 2em;
 }

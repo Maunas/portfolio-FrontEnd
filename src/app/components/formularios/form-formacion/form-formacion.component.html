@@ -1,11 +1,56 @@
 <section class="card">
-    <h4 class="card-header">
+    <h4 class="card-header d-flex flex-row justify-content-between">
         Formación Profesional
         <div class="botones-grupo">
-            <app-boton-modificar [accion]="'Agregar'"></app-boton-modificar>
+            <app-boton-modificar [accion]="'Agregar'" (click)="onAddFormacion(formacion)"></app-boton-modificar>
         </div>
     </h4>
 
+    <div class="itemlista" *ngIf="agregar; else: modificarformacion">
+        <div class="infoitem">
+            <div class="imagen">
+                <div *ngIf="nuevaFormacion.urlImagen != ''; else placeholder"><img src="{{ nuevaFormacion.urlImagen }}" /></div>
+                <ng-template #placeholder> <fa-icon [icon]="icono"></fa-icon> </ng-template>
+            </div>
+            <div class="infoitem-detalle">
+                <form>
+                    <fieldset>
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="carrera" class="col-form-label col-4">Carrera</label>
+                            <input type=text autocomplete="off" id="carrera" class="form-control" name="carrera"
+                                [(ngModel)]="nuevaFormacion.carrera" />
+                        </div>
+
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="fechaFin" class="col-form-label col-4">Fecha de Fin</label>
+                            <input type="date" id="fechaFin" class="form-control" name="fechaFin"
+                                [(ngModel)]="nuevaFormacion.fechaFin" />
+                        </div>
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="institucion" class="col-form-label col-4">Institución</label>
+                            <input type=text autocomplete="off" id="institucion" class="form-control" name="institucion"
+                                [(ngModel)]="nuevaFormacion.institucion" />
+                        </div>
+                        <div class="d-flex flex-row mb-3 align-items-center gap-3">
+                            <label for="urlImagen" class="col-form-label col-4">Url Imagen</label>
+                            <input type=text autocomplete="off" id="urlImagen" class="form-control" name="urlImagen"
+                                [(ngModel)]="nuevaFormacion.urlImagen" />
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class="boton col-auto eliminar" (click)="onDeselect()">
+                              Cancelar
+                            </button>
+                            <button type="submit" class="boton col-auto" (click)="onNewFormacion()">
+                              Guardar Cambios
+                            </button>
+                          </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<ng-template #modificarformacion>
     <div class="itemlista" *ngFor="let form of formacion">
         <div class="infoitem">
             <div class="imagen">
@@ -14,10 +59,10 @@
             </div>
             <div class="infoitem-detalle">
                 <form (ngSubmit)="onEditFormacion(form)">
-                    <fieldset [disabled]="!(selectedItem === form)">
+                    <fieldset [disabled]="!(modificar === form)">
                         <div class="d-flex flex-row mb-3 align-items-center gap-3">
-                            <label for="carrera" class="col-form-label col-4">Puesto</label>
-                            <input type="text" id="carrera" class="form-control" name="carrera"
+                            <label for="carrera" class="col-form-label col-4">Carrera</label>
+                            <input type=text autocomplete="off" id="carrera" class="form-control" name="carrera"
                                 [(ngModel)]="form.carrera" />
                         </div>
 
@@ -28,16 +73,16 @@
                         </div>
                         <div class="d-flex flex-row mb-3 align-items-center gap-3">
                             <label for="institucion" class="col-form-label col-4">Institución</label>
-                            <input type="text" id="institucion" class="form-control" name="institucion"
+                            <input type=text autocomplete="off" id="institucion" class="form-control" name="institucion"
                                 [(ngModel)]="form.institucion" />
                         </div>
                         <div class="d-flex flex-row mb-3 align-items-center gap-3">
                             <label for="urlImagen" class="col-form-label col-4">Url Imagen</label>
-                            <input type="text" id="urlImagen" class="form-control" name="urlImagen"
+                            <input type=text autocomplete="off" id="urlImagen" class="form-control" name="urlImagen"
                                 [(ngModel)]="form.urlImagen" />
                         </div>
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !(selectedItem === form) }">
+                            <button type="submit" class="boton col-auto" [ngClass]="{ 'btn btn-outline-secondary': !(modificar === form) }">
                               Guardar Cambios
                             </button>
                           </div>
@@ -50,4 +95,5 @@
             <app-boton-modificar [accion]="'Eliminar'" (click)="onDeleteFormacion(form)"></app-boton-modificar>
           </div>
     </div>
+</ng-template>
 </section>

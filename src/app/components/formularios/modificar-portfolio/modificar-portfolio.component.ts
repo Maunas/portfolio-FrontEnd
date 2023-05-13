@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto } from 'src/app/interfaces';
+import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto } from 'src/app/interfaces';
 import { ApiService } from 'src/app/service/api.service';
-import { portfolioPrueba } from 'src/assets/prueba';
 
 @Component({
   selector: 'app-modificar-portfolio',
@@ -10,8 +9,7 @@ import { portfolioPrueba } from 'src/assets/prueba';
 })
 export class ModificarPortfolioComponent {
 
-  portfolio: Portfolio = portfolioPrueba;
-  selectedItem = {};
+  portfolio: Portfolio = {} as Portfolio;
 
   constructor(private apiServ: ApiService){}
 
@@ -21,9 +19,6 @@ export class ModificarPortfolioComponent {
     );
   } 
 
-  seleccionarObjeto(objeto: any){
-    this.selectedItem = objeto;
-  }
   eliminarFormacion(id: number){
     this.apiServ.deleteFormacion(id).subscribe(
       () => (this.portfolio.formacion = this.portfolio.formacion.filter((f) => f.idFormacion !== id)
@@ -44,6 +39,11 @@ export class ModificarPortfolioComponent {
       () => (this.portfolio.experiencia = this.portfolio.experiencia.filter((e) => e.idExperiencia !== id)
     ))
   }
+  eliminarContacto(id: number){
+    this.apiServ.deleteContacto(id).subscribe(
+      () => (this.portfolio.contacto = this.portfolio.contacto.filter((c) => c.id !== id)
+    ))
+  }
 
   editarPersona(p: Persona){
     this.apiServ.putPersona(p).subscribe()
@@ -59,5 +59,35 @@ export class ModificarPortfolioComponent {
   }
   editarExperiencia(e: Experiencia){
     this.apiServ.putExperiencia(e).subscribe()
+  }
+  editarContacto(c: Contacto){
+    this.apiServ.putContacto(c).subscribe()
+  }
+
+  crearFormacion(f: Formacion){
+    this.apiServ.postFormacion(f).subscribe(
+      (formacion) => this.portfolio.formacion.push(formacion)
+    )
+  }
+  crearHabilidad(h: Habilidad){
+    this.apiServ.postHabilidad(h).subscribe(
+      (skill) => {this.portfolio.habilidad.push(skill);
+      alert("Es necesario actualizar al agregar habilidades")}
+    )
+  }
+  crearProyecto(p: Proyecto){
+    this.apiServ.postProyecto(p).subscribe(
+      (proy) => this.portfolio.proyecto.push(proy)
+    )
+  }
+  crearExperiencia(e: Experiencia){
+    this.apiServ.postExperiencia(e).subscribe(
+      (exp) => this.portfolio.experiencia.push(exp)
+    )
+  }
+  crearContacto(c: Contacto){
+    this.apiServ.postContacto(c).subscribe(
+      (cont) => this.portfolio.contacto.push(cont)
+    )
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto } from '../interfaces';
+import { Observable, map } from 'rxjs';
+import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto, Usuario } from '../interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -88,4 +88,6 @@ export class ApiService {
     const url: string = this.apiUrl + `/edit/formacion/eliminar/${id}`;
     return this.http.delete<String>(url);
   }
+
+  
 }

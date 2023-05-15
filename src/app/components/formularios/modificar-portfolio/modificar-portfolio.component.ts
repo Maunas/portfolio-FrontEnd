@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto } from 'src/app/interfaces';
 import { ApiService } from 'src/app/service/api.service';
+import { DateService } from 'src/app/service/date.service';
 
 @Component({
   selector: 'app-modificar-portfolio',
@@ -11,11 +12,14 @@ export class ModificarPortfolioComponent {
 
   portfolio: Portfolio = {} as Portfolio;
 
-  constructor(private apiServ: ApiService){}
+  constructor(private apiServ: ApiService, private fechas: DateService){}
 
   ngOnInit() {
     this.apiServ.editPortfolio().subscribe(
-      (portfolio) => (this.portfolio = portfolio)
+      (portfolio) => {
+        //Las fechas vienen en Unix
+        this.portfolio = this.fechas.formatearFechasPortfolio(portfolio);
+      }
     );
   } 
 

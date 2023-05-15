@@ -6,6 +6,7 @@ import { ModificarPortfolioComponent } from './components/formularios/modificar-
 
 
 const appRoutes: Routes = [
+    { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
     { path: 'portfolio', component: PortfolioComponent },
     { path: 'portfolio/edit', component: ModificarPortfolioComponent },
     { path: 'portfolio/login' , component: LoginComponent }

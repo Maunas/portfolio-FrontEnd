@@ -1,5 +1,5 @@
 <section class="card">
-  <img alt="" src="{{ persona.urlBanner }}" class="card-img-top" style="max-height:500px;"/>
+  <img alt="" src="{{ persona.urlBanner }}" class="card-img-top" style="max-height:500px;" />
   <div class="boton-editar-persona">
     <app-boton-modificar [accion]="'Editar'" (click)="onSelectPersona(persona)"
       class="d-flex justify-items-center"></app-boton-modificar>
@@ -8,42 +8,54 @@
     <fieldset [disabled]="!modificar">
       <div class="personal">
         <div class="perfil">
-          <img class="img-thumbnail mb-3" src="{{ persona.urlFoto }}" alt="Foto de Perfil"/>
+          <img class="imagen img-thumbnail" src="{{persona.urlFoto}}" alt="Foto de Perfil"
+            *ngIf="persona.urlFoto; else: placeholder" />
+          <ng-template #placeholder>
+            <div class="imagen placeholder img-thumbnail"></div>
+          </ng-template>
 
-          <div class="d-flex flex-row mb-3 align-items-center gap-3">
-            <label for="nacimiento" class="col-form-label col-3">Fecha de Nacimiento</label>
-            <input type="date" id="nacimiento" class="form-control" name="nacimiento"
-              [(ngModel)]="persona.nacimiento" />
-          </div>
-
-          <div class="d-flex flex-row mb-3 align-items-center gap-3">
-            <label for="profesion" class="col-form-label col-3">Ocupacion</label>
-            <input type=text autocomplete="off" id="profesion" class="form-control" name="profesion" [(ngModel)]="persona.profesion" />
-          </div>
         </div>
 
         <div class="descripcion">
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
-            <label for="nombreCompleto" class="col-form-label col-3">Nombre</label>
+            <label for="nombreCompleto" class="col-form-label col-3">Nombre<span style="color:red;">*</span></label>
             <input type=text autocomplete="off" id="nombreCompleto" class="form-control" name="nombreCompleto"
               [(ngModel)]="persona.nombreCompleto" />
           </div>
 
 
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
-            <label for="descripcion" class="col-form-label col-3">Descripción</label>
+            <label for="descripcion" class="col-form-label col-3">Descripción<span style="color:red;">*</span></label>
             <textarea id="descripcion" class="form-control" rows="2" name="descripcion"
               [(ngModel)]="persona.descripcion"></textarea>
           </div>
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="nacimiento" class="col-form-label col-3">Fecha de Nacimiento<span
+                style="color:red;">*</span></label>
+            <div class="d-flex flex-column form-control">
+              <input type="date" id="nacimiento" class="form-control" name="nacimiento"
+                [(ngModel)]="persona.nacimiento" />
+              <p style="margin: 0 auto">{{persona.nacimiento | date: 'dd-MM-yyyy'}}</p>
+            </div>
+          </div>
 
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
+            <label for="profesion" class="col-form-label col-3">Ocupacion<span style="color:red;">*</span></label>
+            <input type=text autocomplete="off" id="profesion" class="form-control" name="profesion"
+              [(ngModel)]="persona.profesion" />
+          </div>
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="urlFoto" class="col-form-label col-3">Url Foto</label>
-            <input type=text autocomplete="off" id="urlFoto" class="form-control" name="urlFoto" [(ngModel)]="persona.urlFoto" />
+            <input type=text autocomplete="off" id="urlFoto" class="form-control" name="urlFoto"
+              [(ngModel)]="persona.urlFoto" />
           </div>
           <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="urlBanner" class="col-form-label col-3">Url Banner</label>
-            <input type=text autocomplete="off" id="urlBanner" class="form-control" name="urlBanner" [(ngModel)]="persona.urlBanner" />
+            <input type=text autocomplete="off" id="urlBanner" class="form-control" name="urlBanner"
+              [(ngModel)]="persona.urlBanner" />
           </div>
+
+          <p class="ps-2" style="color: red;" *ngIf="(modificar)">Los campos con * son obligatorios</p>
         </div>
       </div>
       <div class="d-flex justify-content-end">

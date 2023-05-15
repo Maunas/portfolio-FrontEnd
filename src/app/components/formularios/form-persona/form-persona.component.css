@@ -20,7 +20,7 @@ section{
       align-items: center;
       width: 20%;
     }
-    .perfil img {
+    .perfil .imagen {
       height: 10em;
       width: 10em;
       border-radius: 50%;
@@ -39,3 +39,6 @@ section{
   .boton-editar-persona{
     margin: 1em 2em 0 auto; 
   }
+  .placeholder{
+  background-color: var(--primario-1);
+}

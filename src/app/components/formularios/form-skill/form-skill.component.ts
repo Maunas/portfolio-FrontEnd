@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { Habilidad } from 'src/app/interfaces';
 import { FormularioService } from 'src/app/service/formulario.service';
+import { ValidationService } from 'src/app/service/validation.service';
 
 @Component({
   selector: 'app-form-skill',
@@ -25,7 +26,8 @@ export class FormSkillComponent {
   agregar: boolean = false;
   nuevaHabilidad: Habilidad = {nombreHabilidad: '', nivelHabilidad: 0, valorMax:1, tipoSkill:'Hard'} as Habilidad;
 
-constructor(private formServ: FormularioService){}
+constructor(private formServ: FormularioService,
+  private validation: ValidationService){}
 
   ngOnInit(){
     this.formServ.actualizarSeleccion().subscribe(
@@ -37,7 +39,9 @@ constructor(private formServ: FormularioService){}
   }
 
   ngOnChanges(changes: SimpleChanges){
+    if(this.habilidad.length>0){
     this.filtrarHabilidad();
+  }
   }
 
   filtrarHabilidad(){
@@ -53,18 +57,20 @@ constructor(private formServ: FormularioService){}
     this.formServ.seleccionarObjeto(skill);
   }
     onEditHabilidad(skill: Habilidad){
+      if (this.validation.validarHabilidad(skill)) {
     this.editHabilidad.emit(skill);
     this.filtrarHabilidad();
-    this.formServ.deseleccionarObjeto();
+    this.formServ.deseleccionarObjeto();}
   }
   onAddHabilidad(skill: Habilidad[]) {
     this.formServ.agregarObjeto(skill);
     this.nuevaHabilidad = {nombreHabilidad: '', nivelHabilidad: 0, valorMax:1, tipoSkill:'Hard'} as Habilidad;
   }
   onNewHabilidad() {
+    if (this.validation.validarHabilidad(this.nuevaHabilidad)) {
     this.newHabilidad.emit(this.nuevaHabilidad);
     this.onDeselect();
-    this.filtrarHabilidad();
+    this.filtrarHabilidad();}
   }
   onDeselect() {
     this.formServ.deseleccionarObjeto();

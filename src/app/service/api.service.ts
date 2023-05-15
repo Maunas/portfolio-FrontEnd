@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class ApiService {
 
-  apiUrl: string = 'http://localhost:8080/portfolio';
+  apiUrl: string = 'https://gm-yoprogramo-portfolio.onrender.com/portfolio';
   constructor(private http: HttpClient) {}
 
   getPortfolio(): Observable<Portfolio>{

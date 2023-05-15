@@ -1,17 +1,18 @@
 <div class="portfolio">
   <section class="card">
   <h4 class="card-header">Editar Portfolio</h4>
-  <form  class="p-4" (ngSubmit)="iniciarSesion()">
+  <form  class="p-4" >
     <div class="mb-3">
       <label for="username" class="form-label">Nombre de Usuario</label>
-      <input autocomplete="off" type="text" class="form-control" id="username" name="username" [(ngModel)]="username"/>
+      <input autocomplete="off" type="text" class="form-control" id="username" name="username" [(ngModel)]="usuario.username"/>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Contraseña</label>
-      <input autocomplete="off" type="password" class="form-control" id="password" name="password" [(ngModel)]="password"/>
+      <input autocomplete="off" type="password" class="form-control" id="password" name="password" [(ngModel)]="usuario.password"/>
     </div>
     <div class="d-grid gap-2">
-      <button class="btn btn-primary boton" type="submit">Iniciar Sesión</button>
+      <button class="btn btn-primary boton eliminar" type="submit" routerLink="/portfolio">Cancelar</button>
+      <button class="btn btn-primary boton" type="submit" (click)="iniciarSesion()">Iniciar Sesión</button>
     </div>
   </form>
 </section>

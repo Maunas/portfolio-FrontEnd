@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contacto } from 'src/app/interfaces';
 import { FormularioService } from 'src/app/service/formulario.service';
+import { LoginService } from 'src/app/service/login.service';
 import { UiService } from 'src/app/service/ui.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class FormContactoComponent {
   nuevoContacto: Contacto = { nombreContacto: '', urlContacto: '' };
   logo = this.ui.logo;
 
-  constructor(private formServ: FormularioService, private ui: UiService) {}
+  constructor(private formServ: FormularioService, private ui: UiService, private login: LoginService) {}
 
   ngOnInit() {
     this.formServ.actualizarSeleccion().subscribe((sel) => {
@@ -53,5 +54,9 @@ export class FormContactoComponent {
   }
   onDeselect() {
     this.formServ.deseleccionarObjeto();
+  }
+
+  cerrarSesion(){
+    this.login.logOut();
   }
 }

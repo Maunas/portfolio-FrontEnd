@@ -48,3 +48,7 @@ export interface Portfolio{
     habilidad: Habilidad[];
     contacto: Contacto[];
 }
+export interface Usuario{
+    username: string;
+    password: string;
+}

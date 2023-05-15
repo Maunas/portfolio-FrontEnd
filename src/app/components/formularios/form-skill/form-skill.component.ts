@@ -39,7 +39,9 @@ constructor(private formServ: FormularioService,
   }
 
   ngOnChanges(changes: SimpleChanges){
+    if(this.habilidad.length>0){
     this.filtrarHabilidad();
+  }
   }
 
   filtrarHabilidad(){

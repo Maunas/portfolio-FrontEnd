@@ -20,7 +20,7 @@ section{
     align-items: center;
     width: 20%;
   }
-  .perfil img {
+  .perfil .imagen {
     height: 10em;
     width: 10em;
     border-radius: 50%;
@@ -28,3 +28,6 @@ section{
   .descripcion {
     width: 70%;
   }
+.placeholder{
+  background-color: var(--primario-1);
+}

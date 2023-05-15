@@ -60,7 +60,6 @@ export class DateService {
       }
       return formacion;
     });
-    alert(new Date('1999-11-11'))
     return portfolio;
   }
 }

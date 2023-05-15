@@ -29,7 +29,7 @@
             <input type=text autocomplete="off" id="nombreContacto" class="form-control" name="nombreContacto"
               [(ngModel)]="nuevoContacto.nombreContacto" />
           </div>
-          <div class="d-flex flex-row align-items-center gap-3">
+          <div class="d-flex flex-row mb-3 align-items-center gap-3">
             <label for="urlContacto" class="col-form-label col-4">Enlace<span style="color: red;">*</span></label>
             <input type=text autocomplete="off" id="urlContacto" class="form-control" name="urlContacto"
               [(ngModel)]="nuevoContacto.urlContacto" />
@@ -39,29 +39,30 @@
         <ng-template #modificarContacto>
           <div class="d-flex flex-row mb-2 align-items-center gap-3">
             <div class="d-flex flex-row mb-3 align-items-center gap-3">
-              <label for="newNombreContacto" class="col-form-label col-4">Medio de Contacto<span style="color: red;">*</span></label>
+              <label for="newNombreContacto" class="col-form-label col-4">Medio de Contacto<span
+                  style="color: red;">*</span></label>
 
               <!--Si se quiere agregar, muestra un formulario vacio-->
               <input type=text autocomplete="off" id="newNombreContacto" class="form-control" name="nombreContacto"
                 [(ngModel)]="modificar.nombreContacto" />
             </div>
-            <div class="d-flex flex-row align-items-center gap-3">
+            <div class="d-flex flex-row mb-3 align-items-center gap-3">
               <label for="newUrlContacto" class="col-form-label col-4">Enlace<span style="color: red;">*</span></label>
               <input type=text autocomplete="off" id="newUrlContacto" class="form-control" name="urlContacto"
                 [(ngModel)]="modificar.urlContacto" />
             </div>
           </div>
         </ng-template>
-        <p style="color: red;" >Los campos con * son obligatorios</p>
-          <div class="d-flex justify-content-around">
-            <!--Cancelar si esta en el formulario para agregar, eliminar si esta para modificar-->
-            <button class="boton col-auto eliminar" (click)="agregar ? onDeselect() : onDeleteContacto(modificar)">
-              {{agregar ? 'Cancelar' : 'Eliminar'}}
-            </button>
-            <button class="boton col-auto" (click)="agregar ? onNewContacto() : onEditContacto(modificar)">
-              Guardar Cambios
-            </button>
-          </div>
+        <p style="color: red;">Los campos con * son obligatorios</p>
+        <div class="d-flex justify-content-around">
+          <!--Cancelar si esta en el formulario para agregar, eliminar si esta para modificar-->
+          <button class="boton col-auto eliminar" (click)="agregar ? onDeselect() : onDeleteContacto(modificar)">
+            {{agregar ? 'Cancelar' : 'Eliminar'}}
+          </button>
+          <button class="boton col-auto" (click)="agregar ? onNewContacto() : onEditContacto(modificar)">
+            Guardar Cambios
+          </button>
+        </div>
 
 
       </fieldset>

@@ -16,6 +16,7 @@ export class PersonalComponent {
   edad?: number;
   
   ngOnChanges(changes: SimpleChanges){
+    if(this.persona.nacimiento){
     this.edad = this.fechas.calcularEdad(this.persona.nacimiento);
-  }
+  }}
 }

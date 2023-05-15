@@ -1,4 +1,5 @@
-import { Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Output, SimpleChanges } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +10,7 @@ import { ValidationService } from 'src/app/service/validation.service';
 @Component({
   selector: 'app-form-formacion',
   templateUrl: './form-formacion.component.html',
+  providers: [DatePipe],
   styleUrls: ['./form-formacion.component.css']
 })
 export class FormFormacionComponent {
@@ -27,7 +29,7 @@ export class FormFormacionComponent {
   @Output()
   newFormacion: EventEmitter<Formacion> = new EventEmitter<Formacion>();
 
-  nuevaFormacion: Formacion = {institucion:"", carrera:"", urlImagen:""} as Formacion;
+  nuevaFormacion: Formacion = {institucion:"", carrera:"", urlImagen:"", fechaFin:new Date()} as Formacion;
 
   constructor(private formServ: FormularioService,
     private validation: ValidationService){}
@@ -38,7 +40,11 @@ export class FormFormacionComponent {
         this.modificar = sel.seleccion;
         this.agregar = (this.formacion === sel.agregar);
       }
-    )
+    );
+  }
+
+  ngOnChanges(changes: SimpleChanges){
+
   }
 
   onDeleteFormacion(form: Formacion){

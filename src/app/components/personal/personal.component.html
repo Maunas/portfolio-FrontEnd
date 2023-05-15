@@ -3,10 +3,12 @@
         alt=""
         src="{{persona.urlBanner}}"
         class="card-img-top"
+        *ngIf="persona.urlBanner"
       />
     <div class="personal">
       <div class="perfil">
-        <img class="img-thumbnail" src="{{persona.urlFoto}}" alt="Foto de Perfil"/>
+        <img class="imagen img-thumbnail" src="{{persona.urlFoto}}" alt="Foto de Perfil" *ngIf="persona.urlFoto; else: placeholder"/>
+        <ng-template #placeholder><div class="imagen placeholder img-thumbnail"></div></ng-template>
         <p>{{edad}} años</p>
         <p>{{persona.profesion}}</p>
       </div>

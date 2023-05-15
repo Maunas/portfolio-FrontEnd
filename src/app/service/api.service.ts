@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto, Usuario } from '../interfaces';
+import { Contacto, Experiencia, Formacion, Habilidad, Persona, Portfolio, Proyecto} from '../interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,6 +19,10 @@ export class ApiService {
 
   getPortfolio(): Observable<Portfolio>{
     return this.http.get<Portfolio>(this.apiUrl);
+  }
+  editPortfolio(): Observable<Portfolio>{
+    const url: string = this.apiUrl + "/edit";
+    return this.http.get<Portfolio>(url);
   }
 
   putPersona(persona: Persona): Observable<Persona>{

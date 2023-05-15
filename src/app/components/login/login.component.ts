@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/interfaces';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,14 @@ export class LoginComponent {
   username:String = "";
   password: String = "";
 
-  constructor(private router:Router){
+  constructor(private router:Router, private login:LoginService){
   }
+
+  usuario: Usuario = {} as Usuario;
+
   iniciarSesion(){
-    this.router.navigate(['/portfolio/edit']);
+    this.login.login(this.usuario).subscribe(
+      () => this.router.navigate(["/portfolio/edit"])
+    );
   }
 }

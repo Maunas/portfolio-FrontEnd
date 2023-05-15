@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../interfaces';
 import { Observable, map } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,10 +14,10 @@ const httpOptions = {
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(user: Usuario): Observable<any> {
-    const url: string = 'http://localhost:8080/portfolio';
+    const url: string = 'http://localhost:8080/login';
     return this.http.post<any>(url, user, httpOptions).pipe(
       map(userData => {
         sessionStorage.setItem("username", user.username);
@@ -35,5 +36,6 @@ export class LoginService {
 
   logOut() {
     sessionStorage.removeItem("username");
+    this.router.navigate(["/portfolio"]);
   }
 }

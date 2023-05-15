@@ -14,7 +14,7 @@ export class ModificarPortfolioComponent {
   constructor(private apiServ: ApiService){}
 
   ngOnInit() {
-    this.apiServ.getPortfolio().subscribe(
+    this.apiServ.editPortfolio().subscribe(
       (portfolio) => (this.portfolio = portfolio)
     );
   } 

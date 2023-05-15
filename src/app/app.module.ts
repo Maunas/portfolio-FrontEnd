@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
@@ -27,6 +27,7 @@ import { FormProyectoComponent } from './components/formularios/form-proyecto/fo
 import { FormContactoComponent } from './components/formularios/form-contacto/form-contacto.component';
 import { ModificarPortfolioComponent } from './components/formularios/modificar-portfolio/modificar-portfolio.component';
 import { FormItemSkillComponent } from './components/formularios/form-item-skill/form-item-skill.component';
+import { InterceptorService } from './service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,9 @@ import { FormItemSkillComponent } from './components/formularios/form-item-skill
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,16 +3,17 @@
   <h4 class="card-header">Editar Portfolio</h4>
   <form  class="p-4" >
     <div class="mb-3">
-      <label for="username" class="form-label">Nombre de Usuario</label>
+      <label for="username" class="form-label">Nombre de Usuario<span style="color: red;">*</span></label>
       <input autocomplete="off" type="text" class="form-control" id="username" name="username" [(ngModel)]="usuario.username"/>
     </div>
     <div class="mb-3">
-      <label for="password" class="form-label">Contraseña</label>
+      <label for="password" class="form-label">Contraseña<span style="color: red;">*</span></label>
       <input autocomplete="off" type="password" class="form-control" id="password" name="password" [(ngModel)]="usuario.password"/>
     </div>
-    <div class="d-grid gap-2">
-      <button class="btn btn-primary boton eliminar" type="submit" routerLink="/portfolio">Cancelar</button>
+    <p style="color: red;">Los campos con * son obligatorios</p>
+    <div class="d-grid gap-2 d-flex flex-row gap-3">
       <button class="btn btn-primary boton" type="submit" (click)="iniciarSesion()">Iniciar Sesión</button>
+      <button class="btn btn-primary boton eliminar" routerLink="/portfolio">Cancelar</button>
     </div>
   </form>
 </section>

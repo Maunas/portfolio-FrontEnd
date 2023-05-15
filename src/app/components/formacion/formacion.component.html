@@ -19,7 +19,7 @@
         </h5>
         <p class="cursiva">
           <span *ngIf="form.fechaFin; then fechafin; else encurso"></span>
-          <ng-template #fechafin>{{ form.fechaFin }}</ng-template>
+          <ng-template #fechafin>{{ form.fechaFin  | date:'dd-MM-yyyy'}}</ng-template>
           <ng-template #encurso>En curso</ng-template>
         </p>
         <p>

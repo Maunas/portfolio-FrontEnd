@@ -20,11 +20,11 @@
           {{ exp.puesto }}
         </h5>
         <p class="cursiva">
-          {{ exp.fechaDesde }} -
+          {{ exp.fechaDesde | date:'dd-MM-yyyy'}} -
           <span
             *ngIf="exp.fechaHasta; then fechahasta; else actualidad"
           ></span>
-          <ng-template #fechahasta>{{ exp.fechaHasta }}</ng-template>
+          <ng-template #fechahasta>{{ exp.fechaHasta | date:'dd-MM-yyyy'}}</ng-template>
           <ng-template #actualidad>Actualidad</ng-template>
         </p>
         <p>

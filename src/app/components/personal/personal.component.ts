@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { Persona } from 'src/app/interfaces';
+import { DateService } from 'src/app/service/date.service';
 
 @Component({
   selector: 'app-personal',
@@ -8,8 +9,13 @@ import { Persona } from 'src/app/interfaces';
 })
 export class PersonalComponent {
 
+  constructor(private fechas: DateService){}
+
   @Input()
   persona: Persona = {} as Persona;
-  edad: number = 23;
+  edad?: number;
   
+  ngOnChanges(changes: SimpleChanges){
+    this.edad = this.fechas.calcularEdad(this.persona.nacimiento);
+  }
 }
